@@ -28,7 +28,9 @@
       (setq esk-system-name (car (split-string system-name "\\.")))
       (setq ispell-program-name "/opt/local/bin/aspell"))
   (progn
-    ((setq ispell-program-name "/usr/bin/aspell"))))
+    (setq ispell-program-name "/usr/bin/aspell")
+    (setq browse-url-browser-function (quote browse-url-generic))
+    (setq browse-url-generic-program "chromium-browser")))
 
 ;; Add lein path
 (setenv "PATH" (concat "~/bin:" (getenv "PATH")))
