@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# bin scripts
+cp -f -rv ~/bin .
+
+# zsh files
+cp -f -v ~/.zshrc .
+cp -f -v ~/.tmux.conf .
+cp -f -v ~/.gitconfig .
+cp -f -v ~/.gitignore .
+mkdir -p .oh-my-zsh/custom
+mkdir -p .oh-my-zsh/themes
+cp -f -v ~/.oh-my-zsh/custom/*.zsh .oh-my-zsh/custom/
+cp -f -v ~/.oh-my-zsh/themes/imotov.zsh-theme .oh-my-zsh/themes/
+
+# emacs files
+mkdir -p .emacs.d
+cp -f -rv ~/.emacs.d .
+
+# Remove cruft
+rm -rf .emacs.d/auto-save-list/
+rm -rf .emacs.d/backups
+rm -rf .emacs.d/tramp
+rm -rf .emacs.d/places
+rm -rf .emacs.d/url
+rm -rf .emacs.d/swank

@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Usage:
+# % curl -sk https://raw.github.com/imotov/dotfiles/master/bootstrap | zsh
+
+rm -rf ~/.oh-my-zsh
+rm -rf ~/.dotfiles
+git clone -q git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cd ~/.oh-my-zsh/plugins && git clone -q git://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone -q git://github.com/imotov/dotfiles.git ~/.dotfiles
+
+cp -R ~/.dotfiles/.emacs.d ~/
+cp -R -n ~/.dotfiles/bin ~/
+
+cp -f ~/.dotfiles/.zshrc ~/
+cp -f ~/.dotfiles/.gitconfig ~/
+cp -f ~/.dotfiles/.gitignore ~/
+cp -f ~/.dotfiles/.tmux.conf ~/
+cp -f ~/.dotfiles/.oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
+cp -f ~/.dotfiles/.oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
+
+echo "Done."
