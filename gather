@@ -17,6 +17,9 @@ cp -f -v ~/.oh-my-zsh/themes/imotov.zsh-theme .oh-my-zsh/themes/
 mkdir -p .emacs.d
 cp -f -rv ~/.emacs.d .
 
+# other files
+cp -f -rv ~/.MacOSX .
+
 # Remove cruft
 rm -rf .emacs.d/auto-save-list/
 rm -rf .emacs.d/backups
