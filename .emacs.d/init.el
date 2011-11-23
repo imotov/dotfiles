@@ -38,7 +38,8 @@
 ;; Org mode settings
 (add-hook 'org-mode-hook 'turn-on-flyspell)
 (setq org-directory "~/Dropbox/Work/Notes")
-(setq org-agenda-files (list org-directory)
+(setq org-agenda-files '("~/Dropbox/Work/Notes/home.org"
+			 "~/Dropbox/Work/Notes/work.org")
       org-id-locations-file org-directory)
 (global-set-key (kbd "<f12>") 'org-agenda)
 ;;(setq org-upcoming-deadline '(:foreground "blue" :weight bold))
