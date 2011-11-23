@@ -1,0 +1,11 @@
+cp -R ~/.dotfiles/.emacs.d ~/
+cp -R -n ~/.dotfiles/bin ~/
+cp -R ~/.dotfiles/.MacOSX ~/
+
+cp -f ~/.dotfiles/.zshrc ~/
+cp -f ~/.dotfiles/.gitconfig ~/
+cp -f ~/.dotfiles/.gitignore ~/
+cp -f ~/.dotfiles/.tmux.conf ~/
+cp -f ~/.dotfiles/.oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
+cp -f ~/.dotfiles/.oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
+
