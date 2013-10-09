@@ -1,4 +1,3 @@
-cp -R ~/.dotfiles/.emacs.d ~/
 cp -R -n ~/.dotfiles/bin ~/
 cp -R ~/.dotfiles/.MacOSX ~/
 
