@@ -5,7 +5,7 @@
 # Usage:
 # ES_VER=0.19.6 setup-es 
 
-ES_VER=${ES_VER-"0.19.8"}
+ES_VER=${ES_VER-"0.90.7"}
 DOWNLOADS="${DOWNLOADS-$HOME/Downloads}"
 DOWNLOADS="${DOWNLOADS%/}"
 SOFTWARE_HOME="${SOFTWARE_HOME-$HOME/Software}"
@@ -20,7 +20,7 @@ cd ${SOFTWARE_HOME}
 if [ ! -e "${ES_ARCHIVE_PATH}" ]
 then
 	echo "Downloading $ES_ARCHIVE"
-	curl -f -L "https://github.com/downloads/elasticsearch/elasticsearch/${ES_ARCHIVE}" -o ${ES_ARCHIVE_PATH}
+	curl -f -L "https://download.elasticsearch.org/elasticsearch/elasticsearch/${ES_ARCHIVE}" -o ${ES_ARCHIVE_PATH}
 	if [ $? -ne 0 ]
 	then
 		echo "Error downloading file"
@@ -42,8 +42,8 @@ echo '
 ############################ My Settings ####################################
 network.host: "127.0.0.1"
 cluster.name: "elasticsearch-imotov"
-index.number_of_shards: 1
-index.number_of_replicas: 0
+script.disable_dynamic: true
+discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
 discovery.zen.ping.multicast.enabled: false
 ' >> ${ES_CONFIG_FILE}
 echo 'Run: cd "'${ES_HOME}'"; bin/elasticsearch -f'

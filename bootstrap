@@ -10,4 +10,11 @@ cd ~/.oh-my-zsh/plugins && git clone -q git://github.com/zsh-users/zsh-syntax-hi
 git clone -q git://github.com/imotov/dotfiles.git ~/.dotfiles
 . ~/.dotfiles/push
 
+pushd ~/.dotfiles
+# Set proper url for .dotfiles remote repository
+git remote set-url origin git@github.com:imotov/dotfiles.git
+cd ~/bin
+# Download and install stream2es utility
+curl -O download.elasticsearch.org/stream2es/stream2es; chmod +x stream2es
+popd
 echo "Done."
