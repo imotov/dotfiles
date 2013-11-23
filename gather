@@ -7,7 +7,6 @@ cp -f -rv ~/bin .
 cp -f -v ~/.zshrc .
 cp -f -v ~/.tmux.conf .
 cp -f -v ~/.gitconfig .
-cp -f -v ~/.gitignore .
 mkdir -p .oh-my-zsh/custom
 mkdir -p .oh-my-zsh/themes
 cp -f -v ~/.oh-my-zsh/custom/*.zsh .oh-my-zsh/custom/
@@ -15,3 +14,6 @@ cp -f -v ~/.oh-my-zsh/themes/imotov.zsh-theme .oh-my-zsh/themes/
 
 # other files
 cp -f -rv ~/.MacOSX .
+
+# copy idea.properties and idea.vmoptions files
+cp -f -v ~/Library/Preferences/IntelliJIdea12/idea.* idea
