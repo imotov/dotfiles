@@ -3,3 +3,5 @@
 	email = igor@motovs.org
 [core]
 	editor = mate -w
+[credential]
+	helper = osxkeychain
