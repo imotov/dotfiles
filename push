@@ -5,8 +5,8 @@ cp -f ~/.dotfiles/.zshrc ~/
 cp -f ~/.dotfiles/.tmux.conf ~/
 cp -f ~/.dotfiles/.oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
 cp -f ~/.dotfiles/.oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
-mkdir -p ~/Library/Preferences/IntelliJIdea13/
-cp -f ~/.dotfiles/idea/* ~/Library/Preferences/IntelliJIdea13/ 
+mkdir -p ~/Library/Preferences/IntelliJIdea14/
+cp -f ~/.dotfiles/idea/* ~/Library/Preferences/IntelliJIdea14/
 
 # Mac OSX specific part
 OS=$(uname)
