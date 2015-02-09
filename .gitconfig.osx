@@ -5,3 +5,5 @@
 	editor = mate -w
 [credential]
 	helper = osxkeychain
+[color]
+	ui = auto
