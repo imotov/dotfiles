@@ -1,0 +1,4 @@
+#!/bin/zsh
+#
+echo git push flea $(current_branch)
+ssh flea.local "cd ~/Builds; ls -l"
