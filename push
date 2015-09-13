@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cp -R ~/.dotfiles/bin ~/
 cp -R ~/.dotfiles/.MacOSX ~/
 
@@ -10,7 +12,7 @@ cp -f ~/.dotfiles/idea/* ~/Library/Preferences/IntelliJIdea14/
 
 # Mac OSX specific part
 OS=$(uname)
-if [[ $OS == "Darwin" ]]; then
+if [ $OS = "Darwin" ]; then
     cp -f ~/.dotfiles/.gitconfig.osx ~/.gitconfig
 else
     cp -f ~/.dotfiles/.gitconfig ~/
