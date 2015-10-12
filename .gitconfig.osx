@@ -2,7 +2,7 @@
 	name = Igor Motov
 	email = igor@motovs.org
 [core]
-	editor = mate -w
+	editor = atom -w
 [credential]
 	helper = osxkeychain
 [color]
