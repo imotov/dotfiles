@@ -1,6 +1,4 @@
 -Xms128m
 -Xmx1024m
--XX:MaxPermSize=350m
--XX:ReservedCodeCacheSize=96m
--XX:+UseCodeCacheFlushing
+-XX:ReservedCodeCacheSize=240m
 -XX:+UseCompressedOops
