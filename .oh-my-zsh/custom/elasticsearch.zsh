@@ -13,7 +13,10 @@ function gpr {
     git fetch elasticsearch pull/$1/head:pr/$1
 }
 alias gnow='git commit --amend --date "`date`"'
+# usage rempush: remote
 # flea tests
 alias flearam='ssh flea.local "if ! test -e /Volumes/Ramdisk; then diskutil erasevolume HFS+ Ramdisk `hdiutil attach -nomount ram://16777216`; fi"'
 alias fleapush='flearam; git push -f flea $(current_branch); ssh flea.local "cd /Volumes/Ramdisk; if ! test -e ${PWD##*/}; then git clone ~/Repo/${PWD##*/}; fi; cd ${PWD##*/}; git fetch origin; git checkout $(current_branch); git reset --hard origin/$(current_branch)"'
 alias fleatest='fleapush; ssh flea.local "cd /Volumes/Ramdisk/${PWD##*/}; JAVA_HOME=\$(/usr/libexec/java_home -v 1.8) PATH=/usr/local/bin:\$PATH gradle clean check"'
+alias leafpush='git push -f leafminer $(current_branch); ssh leafminer.local "cd /media/ramdisk; if ! test -e ${PWD##*/}; then git clone ~/Repo/${PWD##*/}; fi; cd ${PWD##*/}; git fetch origin; git checkout $(current_branch); git reset --hard origin/$(current_branch)"'
+alias leaftest='leafpush; ssh leafminer.local "cd /media/ramdisk/${PWD##*/}; /home/igor/Software/gradle-2.13/bin/gradle clean check -Dtests.jvms=8"'
