@@ -2,18 +2,18 @@
 
 cp -R ~/.dotfiles/bin ~/
 
-cp -f ~/.dotfiles/.zshrc ~/
-cp -f ~/.dotfiles/.tmux.conf ~/
-cp -f ~/.dotfiles/.oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
-cp -f ~/.dotfiles/.oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
+cp -f ~/.dotfiles/zshrc ~/.zshrc
+cp -f ~/.dotfiles/tmux.conf ~/.tmux.conf
+cp -f ~/.dotfiles/oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
+cp -f ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
 
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-    cp -R ~/.dotfiles/.MacOSX ~/
-    cp -f ~/.dotfiles/.gitconfig.osx ~/.gitconfig
+    cp -R ~/.dotfiles/MacOSX ~/.MacOSX
+    cp -f ~/.dotfiles/gitconfig.osx ~/.gitconfig
     mkdir -p ~/Library/Preferences/IntelliJIdea2016.2/
     cp -f ~/.dotfiles/idea/* ~/Library/Preferences/IntelliJIdea2016.2/
 else
-    cp -f ~/.dotfiles/.gitconfig ~/
+    cp -f ~/.dotfiles/gitconfig ~/.gitconfig
 fi

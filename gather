@@ -4,23 +4,23 @@
 cp -f -rv ~/bin .
 
 # zsh files
-cp -f -v ~/.zshrc .
-cp -f -v ~/.tmux.conf .
-mkdir -p .oh-my-zsh/custom
-mkdir -p .oh-my-zsh/themes
-cp -f -v ~/.oh-my-zsh/custom/*.zsh .oh-my-zsh/custom/
-cp -f -v ~/.oh-my-zsh/themes/imotov.zsh-theme .oh-my-zsh/themes/
+cp -f -v ~/.zshrc ./zshrc
+cp -f -v ~/.tmux.conf ./tmux.conf
+mkdir -p oh-my-zsh/custom
+mkdir -p oh-my-zsh/themes
+cp -f -v ~/.oh-my-zsh/custom/*.zsh oh-my-zsh/custom/
+cp -f -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
 
 # other files
-cp -f -rv ~/.MacOSX .
+cp -f -rv ~/.MacOSX MacOSX
 
 # copy idea.properties and idea.vmoptions files
-cp -f -v ~/Library/Preferences/IntelliJIdea14/idea.* idea/
+cp -f -v ~/Library/Preferences/IntelliJIdea2016.2/idea.* idea/
 
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-    cp -f -v ~/.gitconfig  ./.gitconfig.osx
+    cp -f -v ~/gitconfig  ./.gitconfig.osx
 else
-    cp -f -v ~/.gitconfig .
+    cp -f -v ~/gitconfig ./.gitconfig
 fi
