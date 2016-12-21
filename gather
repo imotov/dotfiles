@@ -15,7 +15,7 @@ cp -f -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
 cp -f -rv ~/.MacOSX MacOSX
 
 # copy idea.properties and idea.vmoptions files
-cp -f -v ~/Library/Preferences/IntelliJIdea2016.2/idea.* idea/
+cp -f -v ~/Library/Preferences/IntelliJIdea2016.3/idea.* idea/
 
 # Mac OSX specific part
 OS=$(uname)
