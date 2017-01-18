@@ -10,7 +10,7 @@ function gff {
 	git merge --ff-only $1/$(current_branch)
 }
 function gpr {
-    git fetch elasticsearch pull/$1/head:pr/$1
+    git fetch elastic pull/$1/head:pr/$1
 }
 alias gnow='git commit --amend --date "`date`"'
 # usage rempush: remote
