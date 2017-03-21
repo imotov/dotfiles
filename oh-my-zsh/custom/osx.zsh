@@ -2,7 +2,7 @@ OS=$(uname)
 
 if [[ $OS == "Darwin" ]]; then
     ANDROID_HOME=~/Library/Android/sdk; export ANDROID_HOME
-    GRADLE_HOME=~/Software/gradle-2.13; export GRADLE_HOME
+    GRADLE_HOME=~/Software/gradle-3.3; export GRADLE_HOME
     JAVA_HOME=$(/usr/libexec/java_home -v 1.8); export JAVA_HOME
     PATH=/usr/local/bin:~/bin:$GRADLE_HOME/bin:$ANDROID_HOME/platform-tools:$PATH; export PATH
     GOPATH=~/Projects/GoWork; export GOPATH

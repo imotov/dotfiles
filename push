@@ -10,7 +10,8 @@ cp -f ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-    cp -R ~/.dotfiles/MacOSX ~/.MacOSX
+    mkdir -p ~/.MacOSX/
+    cp -f ~/.dotfiles/MacOSX/* ~/.MacOSX/
     cp -f ~/.dotfiles/gitconfig.osx ~/.gitconfig
     mkdir -p ~/Library/Preferences/IntelliJIdea2016.3/
     cp -f ~/.dotfiles/idea/* ~/Library/Preferences/IntelliJIdea2016.3/

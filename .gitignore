@@ -2,4 +2,5 @@
 bin/stream2es
 bin/es
 *~
-
+oh-my-zsh/custom/example.zsh
+idea/idea.key
