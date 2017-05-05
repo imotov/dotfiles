@@ -2,3 +2,4 @@
 -Xmx1024m
 -XX:ReservedCodeCacheSize=240m
 -XX:+UseCompressedOops
+-Didea.no.launcher=true
