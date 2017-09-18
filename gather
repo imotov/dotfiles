@@ -20,7 +20,7 @@ cp -f -v ~/Library/Preferences/IntelliJIdea2017.2/idea.* idea/
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-    cp -f -v ~/gitconfig  ./.gitconfig.osx
+    cp -f -v ~/.gitconfig  ./gitconfig.osx
 else
-    cp -f -v ~/gitconfig ./.gitconfig
+    cp -f -v ~/.gitconfig ./gitconfig
 fi
