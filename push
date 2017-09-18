@@ -13,8 +13,8 @@ if [ $OS = "Darwin" ]; then
     mkdir -p ~/.MacOSX/
     cp -f ~/.dotfiles/MacOSX/* ~/.MacOSX/
     cp -f ~/.dotfiles/gitconfig.osx ~/.gitconfig
-    mkdir -p ~/Library/Preferences/IntelliJIdea2017.1/
-    cp -f ~/.dotfiles/idea/* ~/Library/Preferences/IntelliJIdea2017.1/
+    mkdir -p ~/Library/Preferences/IntelliJIdea2017.2/
+    cp -f ~/.dotfiles/idea/* ~/Library/Preferences/IntelliJIdea2017.2/
 else
     cp -f ~/.dotfiles/gitconfig ~/.gitconfig
 fi
