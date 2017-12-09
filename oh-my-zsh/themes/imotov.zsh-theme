@@ -1,7 +1,11 @@
-local user='%{$fg[green]%}%n@%{$fg[green]%}%m%{$reset_color%}'
+local user=''
 local pwd='%{$fg[green]%}%~%{$reset_color%}'
 local git_branch='$(git_prompt_info)'
 
+if [[ $(uname) == "Linux" ]]
+    then user='%{$fg[magenta]%}%n@%m%{$reset_color%}'
+    else user='%{$fg[green]%}%n@%m%{$reset_color%}'
+fi
 
 # Handle dumb (emacs) terminals with no color
 if [ $TERM = "dumb" ]
