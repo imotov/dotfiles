@@ -11,6 +11,9 @@ mkdir -p oh-my-zsh/themes
 cp -f -v ~/.oh-my-zsh/custom/*.zsh oh-my-zsh/custom/
 cp -f -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
 
+# atom files
+cp -f -v ~/.atom/* ./atom 2>&1 | grep -v 'not copied' 
+
 # other files
 cp -f -rv ~/.MacOSX/* ./MacOSX
 

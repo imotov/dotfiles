@@ -1,0 +1,9 @@
+"*":
+  core:
+    projectHome: "/Users/igor/Projects"
+    restorePreviousWindowsOnStart: "no"
+    telemetryConsent: "no"
+  "exception-reporting":
+    userId: "84084d7c-5d2e-4aa9-b56d-bb50c60c428f"
+  welcome:
+    showOnStartup: false
