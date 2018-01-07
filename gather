@@ -1,29 +1,29 @@
 #!/bin/sh
 
 # bin scripts
-cp -f -rv ~/bin .
+cp -f -p -rv ~/bin .
 
 # zsh files
-cp -f -v ~/.zshrc ./zshrc
-cp -f -v ~/.tmux.conf ./tmux.conf
+cp -f -p -v ~/.zshrc ./zshrc
+cp -f -p -v ~/.tmux.conf ./tmux.conf
 mkdir -p oh-my-zsh/custom
 mkdir -p oh-my-zsh/themes
-cp -f -v ~/.oh-my-zsh/custom/*.zsh oh-my-zsh/custom/
-cp -f -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
+cp -f -p -v ~/.oh-my-zsh/custom/*.zsh oh-my-zsh/custom/
+cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
 
 # atom files
-cp -f -v ~/.atom/* ./atom 2>&1 | grep -v 'not copied' 
+cp -f -p -v ~/.atom/* ./atom 2>&1 | grep -v 'not copied'
 
 # other files
-cp -f -rv ~/.MacOSX/* ./MacOSX
+cp -f -p -rv ~/.MacOSX/* ./MacOSX
 
 # copy idea.properties and idea.vmoptions files
-cp -f -v ~/Library/Preferences/IntelliJIdea2017.2/idea.* idea/
+cp -f -p -v ~/Library/Preferences/IntelliJIdea2017.2/idea.* idea/
 
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-    cp -f -v ~/.gitconfig  ./gitconfig.osx
+    cp -f -p -v ~/.gitconfig  ./gitconfig.osx
 else
-    cp -f -v ~/.gitconfig ./gitconfig
+    cp -f -p -v ~/.gitconfig ./gitconfig
 fi
