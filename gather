@@ -14,16 +14,17 @@ cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
 # atom files
 cp -f -p -v ~/.atom/* ./atom 2>&1 | grep -v 'not copied'
 
-# other files
-cp -f -p -rv ~/.MacOSX/* ./MacOSX
-
-# copy idea.properties and idea.vmoptions files
-cp -f -p -v ~/Library/Preferences/IntelliJIdea2017.2/idea.* idea/
-
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
     cp -f -p -v ~/.gitconfig  ./gitconfig.osx
+
+    # other files
+    cp -f -p -rv ~/.MacOSX/* ./MacOSX
+
+    # copy idea.properties and idea.vmoptions files
+    cp -f -p -v ~/Library/Preferences/IntelliJIdea2017.3/idea.* idea/
+
 else
     cp -f -p -v ~/.gitconfig ./gitconfig
 fi
