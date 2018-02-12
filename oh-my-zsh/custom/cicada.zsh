@@ -6,6 +6,8 @@ if [[ $NAME == "cicada.local" ]]; then
     JAVA_9_HOME=$(/usr/libexec/java_home -v 9.0); export JAVA_9_HOME
     JAVA_HOME=$JAVA_9_HOME; export JAVA_HOME
     RUNTIME_JAVA_HOME=$JAVA_8_HOME; export RUNTIME_JAVA_HOME
+    # IntelliJ Needs this
+    launchctl setenv JAVA_HOME "$JAVA_HOME"
     GOPATH=~/Projects/GoWork; export GOPATH
     PATH=/usr/local/bin:~/bin:$ANDROID_HOME/platform-tools:$PATH; export PATH
     NVM_DIR=~/.nvm; export NVM_DIR
