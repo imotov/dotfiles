@@ -12,5 +12,6 @@ if [[ $NAME == "cicada.local" ]]; then
     PATH=/usr/local/bin:~/bin:$ANDROID_HOME/platform-tools:$PATH; export PATH
     NVM_DIR=~/.nvm; export NVM_DIR
     source $(brew --prefix nvm)/nvm.sh
-    alias callhome="ssh -C -N -2 -v -D 8080 home -p 22422"
+    alias callhome="ssh -C -N -2 -v -D 8080 home"
+    alias callha="ssh -C -N -T -v -L 8123:localhost:8123 home"
 fi
