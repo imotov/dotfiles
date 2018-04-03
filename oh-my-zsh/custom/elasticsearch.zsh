@@ -15,4 +15,4 @@ function gpr {
 alias gnow='git commit --amend --date "`date`"'
 # usage rempush: remote
 # leafminer tests
-alias leafpush='git push -f home $(current_branch); ssh home "cd /media/ramdisk; if ! test -e ${PWD##~/Projects/}; then git clone ~/Repo/${PWD##*/} ${PWD##~/Projects/}; fi; cd ${PWD##~/Projects/}; git fetch origin; git checkout $(current_branch); git reset --hard origin/$(current_branch)"'
+alias leafpush='git push -f leafminer $(current_branch)'
