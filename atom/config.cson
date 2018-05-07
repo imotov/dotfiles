@@ -3,6 +3,10 @@
     projectHome: "/Users/igor/Projects"
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
   editor:
     fontSize: 12
   "exception-reporting":
