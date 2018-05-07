@@ -17,6 +17,6 @@ if [[ $NAME == "cicada.local" ]]; then
     PATH=/usr/local/bin:~/bin:$ANDROID_HOME/platform-tools:$PATH; export PATH
     NVM_DIR=~/.nvm; export NVM_DIR
     source $(brew --prefix nvm)/nvm.sh
-    alias tues="ssh -C -N -T -v -L 5601:localhost:5601 home"
-    alias tuci="ssh -C -N -T -v -L 8080:localhost:8080 home"
+    alias tues="ssh -C -N -T -v -L 5601:127.0.0.1:5601 home"
+    alias tuci="ssh -C -N -T -v -L 8080:127.0.0.1:8080 home"
 fi
