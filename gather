@@ -12,7 +12,7 @@ cp -f -p -v ~/.oh-my-zsh/custom/*.zsh oh-my-zsh/custom/
 cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
 
 # atom files
-cp -f -p -v ~/.atom/* ./atom 2>&1 | grep -v 'not copied'
+cp -f -p -v ~/.atom/*.cson ~/.atom/*.coffee ~/.atom/*.less ./atom 2>&1 | grep -v 'not copied'
 
 # Mac OSX specific part
 OS=$(uname)
