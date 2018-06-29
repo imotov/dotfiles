@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cp -R -p ~/.dotfiles/bin ~/
-
 cp -f -p ~/.dotfiles/zshrc ~/.zshrc
 cp -f -p ~/.dotfiles/tmux.conf ~/.tmux.conf
 cp -f -p ~/.dotfiles/oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
