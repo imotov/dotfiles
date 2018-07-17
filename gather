@@ -20,7 +20,7 @@ if [ $OS = "Darwin" ]; then
     cp -f -p -rv ~/.MacOSX/* ./MacOSX
 
     # copy idea.properties and idea.vmoptions files
-    cp -f -p -v ~/Library/Preferences/IntelliJIdea2017.3/idea.* idea/
+    cp -f -p -v ~/Library/Preferences/IdeaIC2018.1/idea.* idea/
 
 else
     cp -f -p -v ~/.gitconfig ./gitconfig
