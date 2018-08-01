@@ -20,8 +20,11 @@ if [ $OS = "Darwin" ]; then
     cp -f -p -rv ~/.MacOSX/* ./MacOSX
 
     # copy idea.properties and idea.vmoptions files
-    cp -f -p -v ~/Library/Preferences/IdeaIC2018.1/idea.* idea/
+    cp -f -p -v ~/Library/Preferences/IdeaIC2018.1/idea64.vmoptions idea/
 
 else
     cp -f -p -v ~/.gitconfig ./gitconfig
+
+    # need to increase Java heap size on Linux
+    cp -f -p -v ~/.IntelliJIdea2018.1/config/idea64.vmoptions idea/
 fi
