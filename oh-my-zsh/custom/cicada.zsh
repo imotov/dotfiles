@@ -1,6 +1,6 @@
-NAME=$(uname -n)
+OS=$(uname)
 
-if [[ $NAME == "cicada" ]]; then
+if [[ $OS == "Darwin" ]]; then
     ANDROID_HOME=~/Library/Android/sdk; export ANDROID_HOME
     JAVA_7_HOME=$(/usr/libexec/java_home -v 1.7); export JAVA_7_HOME
     launchctl setenv JAVA_7_HOME "$JAVA_7_HOME"
