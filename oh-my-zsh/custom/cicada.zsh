@@ -16,7 +16,7 @@ if [[ $OS == "Darwin" ]]; then
     launchctl setenv JAVA_HOME "$JAVA_HOME"
     RUNTIME_JAVA_HOME=$JAVA8_HOME; export RUNTIME_JAVA_HOME
     GOPATH=~/Projects/GoWork; export GOPATH
-    PATH=/usr/local/bin:~/bin:$ANDROID_HOME/platform-tools:$PATH; export PATH
+    PATH=/usr/local/bin:~/bin:$ANDROID_HOME/platform-tools:$GOPATH/bin:$PATH; export PATH
     NVM_DIR=~/.nvm; export NVM_DIR
     source $(brew --prefix nvm)/nvm.sh
     alias tues="ssh -C -N -T -v -L 5601:127.0.0.1:5601 home"
