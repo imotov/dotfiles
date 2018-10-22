@@ -12,7 +12,7 @@ if [[ $OS == "Darwin" ]]; then
     launchctl setenv JAVA10_HOME "$JAVA10_HOME"
     JAVA11_HOME=$(/usr/libexec/java_home -v 11.0); export JAVA11_HOME
     launchctl setenv JAVA11_HOME "$JAVA11_HOME"
-    JAVA_HOME=$JAVA10_HOME; export JAVA_HOME
+    JAVA_HOME=$JAVA11_HOME; export JAVA_HOME
     launchctl setenv JAVA_HOME "$JAVA_HOME"
     RUNTIME_JAVA_HOME=$JAVA8_HOME; export RUNTIME_JAVA_HOME
     GOPATH=~/Projects/GoWork; export GOPATH
