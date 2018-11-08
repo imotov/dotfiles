@@ -17,6 +17,6 @@ if [ $OS = "Darwin" ]; then
     cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/Library/Preferences/IdeaIC2018.1/
 else
     cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
-    mkdir -p ~/.IntelliJIdea2018.1/config/
-    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.IntelliJIdea2018.1/config/
+    mkdir -p ~/.IntelliJIdea2018.2/config/
+    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.IntelliJIdea2018.2/config/
 fi
