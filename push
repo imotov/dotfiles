@@ -7,16 +7,6 @@ cp -f -p ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
 mkdir -p ~/.atom
 cp -f -p ~/.dotfiles/atom/* ~/.atom
 
-# Mac OSX specific part
-OS=$(uname)
-if [ $OS = "Darwin" ]; then
-    mkdir -p ~/.MacOSX/
-    cp -f -p ~/.dotfiles/MacOSX/* ~/.MacOSX/
-    cp -f -p ~/.dotfiles/gitconfig.osx ~/.gitconfig
-    mkdir -p ~/Library/Preferences/IdeaIC2018.1/
-    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/Library/Preferences/IdeaIC2018.1/
-else
-    cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
-    mkdir -p ~/.IntelliJIdea2018.3/config/
-    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.IntelliJIdea2018.3/config/
-fi
+cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
+mkdir -p ~/.IntelliJIdea2018.3/config/
+cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.IntelliJIdea2018.3/config/
