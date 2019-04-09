@@ -14,4 +14,4 @@ cp -f -p -v ~/.atom/*.cson ~/.atom/*.coffee ~/.atom/*.less ./atom 2>&1 | grep -v
 cp -f -p -v ~/.gitconfig ./gitconfig
 
 # need to increase Java heap size on Linux
-cp -f -p -v ~/.IntelliJIdea2018.3/config/idea64.vmoptions idea/
+cp -f -p -v ~/.IntelliJIdea2019.1/config/idea64.vmoptions idea/
