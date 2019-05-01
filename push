@@ -9,4 +9,4 @@ cp -f -p ~/.dotfiles/atom/* ~/.atom
 
 cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
 mkdir -p ~/.IntelliJIdea2019.1/config/
-cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.IntelliJIdea2018.3/config/
+cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.IntelliJIdea2019.1/config/
