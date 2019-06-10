@@ -3,7 +3,7 @@ local pwd='%{$fg[green]%}%~%{$reset_color%}'
 local git_branch='$(git_prompt_info)'
 
 if [[ $(uname) == "Linux" ]]
-    then user='%{$fg[magenta]%}%n@%m%{$reset_color%}'
+    then user='%{$fg_bold[blue]%}%n@%m%{$reset_color%}'
     else user='%{$fg[green]%}%n@%m%{$reset_color%}'
 fi
 
