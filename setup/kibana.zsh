@@ -1,5 +1,6 @@
 #!/bin/zsh
-
+# Don't continue if anything goes wrong
+set -e
 # Assuming that we already setup repo in elasticearch setup
 sudo apt-get install kibana
 
@@ -13,7 +14,7 @@ if [[ ! -a /var/lib/kibana/kibana.keystore ]]; then
   echo $KIBANA_PASSWORD | sudo -u kibana /usr/share/kibana/bin/kibana-keystore add elasticsearch.password --stdin
 fi
 
-# Copy new config file and SSL sertifiactes from hassio
+# Copy new config file and SSL sertificates from hassio
 gio mount smb://hassio@hassio.local/ssl/ || true
 gio cat smb://hassio@hassio.local/ssl/fullchain.pem | sudo dd of=/etc/kibana/fullchain.pem
 gio cat smb://hassio@hassio.local/ssl/privkey.pem | sudo dd of=/etc/kibana/privkey.pem
