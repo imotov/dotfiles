@@ -1,0 +1,5 @@
+cluster.name: test
+node.name: test1
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+xpack.security.enabled: true
