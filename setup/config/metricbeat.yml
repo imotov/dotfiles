@@ -1,0 +1,34 @@
+#==========================  Modules configuration ============================
+
+metricbeat.config.modules:
+  # Glob pattern for configuration loading
+  path: ${path.config}/modules.d/*.yml
+
+  # Set to true to enable config reloading
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 1
+  index.codec: best_compression
+  #_source.enabled: false
+
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]
+
+  # Optional protocol and basic auth credentials.
+  #protocol: "https"
+  username: "beats_system"
+  password: "BEATS_PASSWORD"
+
+setup.kibana:
+  host: "localhost:5601"
+  protocol: "https"
+  # we are connecting over localhost so SSL sertificates don't work
+  ssl.verification_mode: none
+  username: "kibana"
+  password: "KIBANA_PASSWORD"
+
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
