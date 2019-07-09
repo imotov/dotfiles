@@ -17,7 +17,7 @@ sudo apt-get update && sudo apt-get install elasticsearch
 sudo sed -i 's/\-Xm\(.\)1g/-Xm\16g/g' /etc/elasticsearch/jvm.options
 
 # Copy new config file
-sudo cp ~/.dotfiles/setup/elasticsearch.yml /etc/elasticsearch/
+sudo cp ~/.dotfiles/setup/config/elasticsearch.yml /etc/elasticsearch/
 
 # Strarting elasticsearch
 sudo /bin/systemctl daemon-reload
