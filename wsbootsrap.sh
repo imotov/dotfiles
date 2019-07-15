@@ -134,6 +134,10 @@ if  [ ! -f  $markerSetup3 ]; then
     echo "Installing Dropbox..."
     (cd ~/Downloads && curl -O -L https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_amd64.deb)
     sudo dpkg -i ~/Downloads/dropbox_2019.02.14_amd64.deb
+
+    # Fix sleep issue
+    sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=deep"/' /etc/default/grub
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
   fi
 
   touch $markerSetup3
