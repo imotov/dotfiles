@@ -59,12 +59,14 @@ if  [ ! -f  $markerSetup1 ]; then
     python3\
     python-gpg\
     python3-gpg\
+    python3-distutils\
     software-properties-common\
     tlp\
     zsh
 
   sudo snap install atom --classic
   sudo snap install intellij-idea-ultimate --classic
+  sudo snap install pycharm-professional --classic
   sudo snap install slack --classic
   sudo snap install go --classic
   sudo snap install spotify
@@ -101,7 +103,7 @@ EOF
   # Set proper url for .dotfiles remote repository
   git remote set-url origin git@github.com:imotov/dotfiles.git
   popd
-
+  mkdir ~/Projects
   touch $markerSetup1
 fi
 
