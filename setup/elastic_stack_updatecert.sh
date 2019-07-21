@@ -1,4 +1,6 @@
-#!/bin/zsh
+#!/bin/bash
+
+set -e
 
 sudo systemctl stop kibana.service
 

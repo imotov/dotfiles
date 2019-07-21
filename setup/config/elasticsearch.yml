@@ -1,5 +1,7 @@
 cluster.name: test
-node.name: test1
+node.name: node0
+http.host: 0.0.0.0
 path.data: /var/lib/elasticsearch
 path.logs: /var/log/elasticsearch
+discovery.type: single-node
 xpack.security.enabled: true
