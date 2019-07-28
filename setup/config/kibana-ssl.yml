@@ -1,4 +1,0 @@
-server.host: 0.0.0.0
-server.ssl.enabled: true
-server.ssl.key: /etc/kibana/privkey.pem
-server.ssl.certificate: /etc/kibana/fullchain.pem
