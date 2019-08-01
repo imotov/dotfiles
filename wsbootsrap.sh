@@ -36,6 +36,7 @@ if  [ ! -f  $markerSetup1 ]; then
   sudo add-apt-repository ppa:linuxuprising/java
   sudo apt-get update
   sudo apt-get install -y\
+    ant\
     apt-transport-https\
     ca-certificates\
     curl\
@@ -43,6 +44,7 @@ if  [ ! -f  $markerSetup1 ]; then
     git\
     gnome-tweaks\
     jq\
+    jupyter\
     libxml2-utils\
     lm-sensors\
     libxcb-xtest0\
@@ -57,6 +59,11 @@ if  [ ! -f  $markerSetup1 ]; then
     oracle-java12-installer\
     powertop\
     python3\
+    python3-matplotlib\
+    python3-pandas\
+    python3-geopandas\
+    python3-geojson\
+    python3-shapely\
     python-gpg\
     python3-gpg\
     python3-distutils\
@@ -134,9 +141,17 @@ if  [ ! -f  $markerSetup3 ]; then
 
   # Dropbox
   if [[ $hostName = "silverfish" ]] ; then
+    echo "Installing HA development dependencies"
+    sudo apt-get install -y python3-pip python3-dev python3-venv
+    sudo apt-get install -y autoconf libssl-dev libxml2-dev libxslt1-dev libjpeg-dev libffi-dev libudev-dev zlib1g-dev
+    sudo apt-get install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
+
     echo "Installing Dropbox..."
     (cd ~/Downloads && curl -O -L https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_amd64.deb)
     sudo dpkg -i ~/Downloads/dropbox_2019.02.14_amd64.deb
+
+    echo "Installing Misc utils..."
+    sudo apt-get install -y youtube-dl
 
     # Fix sleep issue
     sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=deep"/' /etc/default/grub
