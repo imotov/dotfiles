@@ -68,6 +68,7 @@ if  [ ! -f  $markerSetup1 ]; then
     python3-gpg\
     python3-distutils\
     software-properties-common\
+    tree\
     virtualbox\
     tlp\
     zsh
