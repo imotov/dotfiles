@@ -39,6 +39,7 @@ if  [ ! -f  $markerSetup1 ]; then
     ant\
     apt-transport-https\
     ca-certificates\
+    calibre\
     curl\
     gadmin-openvpn-client\
     git\
