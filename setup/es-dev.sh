@@ -22,6 +22,7 @@ sudo apt-get install -y\
   oracle-java11-installer-local\
   oracle-java12-installer\
 
+
 sudo snap install intellij-idea-ultimate --classic
 sudo snap install pycharm-professional --classic
 sudo snap install go --classic

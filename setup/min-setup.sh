@@ -17,7 +17,6 @@ sudo apt-get install -y\
   ca-certificates\
   gnome-tweaks\
 
-
 sudo snap install atom --classic
 
 # chrome
