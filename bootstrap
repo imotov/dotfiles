@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # Usage:
+# % sudo apt-get install curl git zsh
 # % curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/bootstrap | zsh
 
 rm -rf ~/.oh-my-zsh
