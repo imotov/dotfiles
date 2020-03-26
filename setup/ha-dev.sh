@@ -21,3 +21,6 @@ sudo apt-get install -y\
   libswscale-dev\
   libavresample-dev\
   libavfilter-dev\
+
+
+sudo snap install pycharm-community --classic
