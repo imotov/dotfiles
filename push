@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 cp -f -p ~/.dotfiles/zshrc ~/.zshrc
 cp -f -p ~/.dotfiles/tmux.conf ~/.tmux.conf

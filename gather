@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 # zsh files
 cp -f -p -v ~/.zshrc ./zshrc
@@ -14,4 +14,8 @@ cp -f -p -v ~/.atom/*.cson ~/.atom/*.coffee ~/.atom/*.less ./atom 2>&1 | grep -v
 cp -f -p -v ~/.gitconfig ./gitconfig
 
 # need to increase Java heap size on Linux
-cp -f -p -v ~/.IntelliJIdea2019.3/config/idea64.vmoptions idea/
+if [[ $NAME == "grasshopper" ]]; then
+  cp -f -p -v ~/.IntelliJIdea2019.3/config/idea64.vmoptions idea/
+else
+  cp -f -p -v ~/.IdeaIC2019.3/config/idea64.vmoptions idea/
+fi
