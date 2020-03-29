@@ -5,19 +5,20 @@
 
 set -e
 sudo apt-get update
-sudo apt-get install -y\
-  lm-sensors\
-  powertop\
-  gadmin-openvpn-client\
-  network-manager-openvpn\
-  network-manager-openvpn-gnome\
-  openvpn\
-  powertop\
-  tlp\
 
+if [[ $NAME != "leafminer" ]]; then
+  sudo apt-get install -y\
+    lm-sensors\
+    powertop\
+    gadmin-openvpn-client\
+    network-manager-openvpn\
+    network-manager-openvpn-gnome\
+    openvpn\
+    powertop\
+    tlp\
+fi
 
 sudo snap install spotify
-# sudo snap install slack --classic
 
 #docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
