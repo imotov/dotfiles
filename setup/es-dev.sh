@@ -21,6 +21,7 @@ sudo apt-get install -y\
   openjdk-8-source\
   oracle-java11-installer-local\
   oracle-java13-installer\
+  oracle-java14-installer\
 
 if [[ $NAME == "grasshopper" ]]; then
   sudo snap install intellij-idea-ultimate --classic
@@ -34,10 +35,11 @@ sudo snap install go --classic
 sudo mv /etc/environment /etc/environment.bak
 sudo bash -c "cat > /etc/environment" <<EOF
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin"
-JAVA_HOME="/usr/lib/jvm/java-12-oracle"
+JAVA_HOME="/usr/lib/jvm/java-14-oracle"
 RUNTIME_JAVA_HOME="/usr/lib/jvm/java-11-oracle"
 JAVA8_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 JAVA11_HOME="/usr/lib/jvm/java-11-oracle"
 JAVA13_HOME="/usr/lib/jvm/java-13-oracle"
+JAVA14_HOME="/usr/lib/jvm/java-14-oracle"
 GOROOT="/usr/local/go"
 EOF
