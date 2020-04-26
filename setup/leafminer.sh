@@ -29,7 +29,7 @@ sudo apt-get install -y\
   openjdk-8-source\
 
 
-# jupyter setup
+# jupyter and python development setup
 sudo apt-get install -y\
   jupyter\
   libxml2-utils\
@@ -43,6 +43,7 @@ sudo apt-get install -y\
   python3-geopandas\
   python3-geojson\
   python3-shapely\
+  pipenv\
 
 
 # python and home assistant development
@@ -84,7 +85,7 @@ sudo apt-get install -y\
 
 # snap utilities
 sudo snap install atom --classic
-sudo snap install pycharm-community --classic
+sudo snap install pycharm-professional --classic
 sudo snap install intellij-idea-community --classic
 sudo snap install spotify
 
