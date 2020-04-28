@@ -4,7 +4,6 @@
 #
 
 set -e
-if false; then
 sudo apt-get update
 sudo apt-get -y dist-upgrade
 
@@ -114,8 +113,14 @@ JAVA11_HOME="/usr/lib/jvm/java-11-oracle"
 JAVA14_HOME="/usr/lib/jvm/java-14-oracle"
 EOF
 
-fi
 chsh -s /usr/bin/zsh
+
+# Install keybase
+pushd ~/Downloads
+curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+sudo apt install -y ./keybase_amd64.deb
+popd
 
 echo "- install zoom from https://zoom.us/download"
 echo "- restart the system"
+echo "- run run_keybase"
