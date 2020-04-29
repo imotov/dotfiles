@@ -17,5 +17,5 @@ cp -f -p -v ~/.gitconfig ./gitconfig
 if [[ $NAME == "grasshopper" ]]; then
   cp -f -p -v ~/.IntelliJIdea2019.3/config/idea64.vmoptions idea/
 else
-  cp -f -p -v ~/.IdeaIC2019.3/config/idea64.vmoptions idea/
+  cp -f -p -v ~/.config/JetBrains/IdeaIC2020.1/idea64.vmoptions idea/
 fi

@@ -12,6 +12,6 @@ if [[ $NAME == "grasshopper" ]]; then
   mkdir -p ~/.IntelliJIdea2019.3/config/
   cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.IntelliJIdea2019.3/config/
 else
-  mkdir -p ~/.IdeaIC2019.3/config/
-  cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.IdeaIC2019.3/config/
+  mkdir -p ~/.config/JetBrains/IdeaIC2020.1/
+  cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IdeaIC2020.1/
 fi
