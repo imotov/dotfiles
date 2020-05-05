@@ -18,6 +18,8 @@ sudo apt-get install -y\
   apt-transport-https\
   ca-certificates\
   gnome-tweaks\
+  flameshot\
+  rclone\
 
 
 # java development
