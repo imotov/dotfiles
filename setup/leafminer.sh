@@ -47,11 +47,19 @@ sudo apt-get install -y\
   python3-geopandas\
   python3-geojson\
   python3-shapely\
+  python3-lxml\
   pipenv\
 
 
 # python and home assistant development
 sudo apt-get install -y\
+  build-essential\
+  libncurses5-dev\
+  libgdbm-dev\
+  libnss3-dev\
+  libreadline-dev\
+  libffi-dev\
+  libsqlite3-dev\
   autoconf\
   libssl-dev\
   libxml2-dev\
@@ -60,6 +68,7 @@ sudo apt-get install -y\
   libffi-dev\
   libudev-dev\
   zlib1g-dev\
+  pkg-config\
   libavformat-dev\
   libavcodec-dev\
   libavdevice-dev\
@@ -121,6 +130,15 @@ chsh -s /usr/bin/zsh
 pushd ~/Downloads
 curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
 sudo apt install -y ./keybase_amd64.deb
+popd
+
+# Install python3.7.7
+pushd ~/Downloads
+curl --remote-name https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz
+tar -xzf Python-3.7.7.tgz
+cd Python-3.7.7
+./configure -enable-loadable-sqlite-extensions --enable-optimizations
+sudo make altinstall
 popd
 
 echo "- install zoom from https://zoom.us/download"
