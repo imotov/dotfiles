@@ -76,6 +76,7 @@ sudo apt-get install -y\
   libswscale-dev\
   libavresample-dev\
   libavfilter-dev\
+  git-secret\
 
 
 # misc utilities
