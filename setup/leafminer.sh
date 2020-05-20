@@ -20,7 +20,9 @@ sudo apt-get install -y\
   gnome-tweaks\
   flameshot\
   rclone\
-
+  gir1.2-clutter-1.0\
+  gir1.2-clutter-gst-3.0\
+  gir1.2-gtkclutter-1.0
 
 # java development
 sudo apt-get install -y\
@@ -77,6 +79,7 @@ sudo apt-get install -y\
   libavresample-dev\
   libavfilter-dev\
   git-secret\
+
 
 
 # misc utilities
