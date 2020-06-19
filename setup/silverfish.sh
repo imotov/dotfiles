@@ -20,6 +20,8 @@ sudo apt-get install -y\
   gnome-tweaks\
   flameshot\
   rclone\
+  tree\
+
 
 # custom apt repositories
 curl -fsSL https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

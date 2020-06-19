@@ -20,6 +20,7 @@ sudo apt-get install -y\
   gnome-tweaks\
   flameshot\
   rclone\
+  tree\
 
 
 # java development
