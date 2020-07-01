@@ -89,11 +89,14 @@ sudo apt-get install -y\
 # custom apt repositories
 curl -fsSL https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo add-apt-repository ppa:linuxuprising/java
 
 sudo apt-get update
 sudo apt-get install -y\
   google-chrome-stable\
+  google-cloud-sdk\
   docker.io\
   docker-compose\
   oracle-java14-installer\
