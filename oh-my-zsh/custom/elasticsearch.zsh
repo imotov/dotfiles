@@ -36,7 +36,6 @@ function rampush {
 	fi
 	cd ${cur_proj}
 	git fetch origin
-	git checkout ${cur_branch}
 	git reset --hard origin/${cur_branch}
 	cd ${cur_dir}
 }
