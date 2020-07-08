@@ -35,7 +35,7 @@ sudo apt-get install -y\
   default-jdk\
 
 
-# jupyter and python development setup
+# statistics, jupyter and python development setup
 sudo apt-get install -y\
   jupyter\
   libxml2-utils\
@@ -51,6 +51,7 @@ sudo apt-get install -y\
   python3-shapely\
   python3-lxml\
   pipenv\
+  r-base\
 
 
 # python and home assistant development
