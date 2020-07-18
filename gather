@@ -10,7 +10,6 @@ cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
 
 # editor files
 cp -f -p -v ~/.atom/*.cson ~/.atom/*.coffee ~/.atom/*.less ./atom 2>&1 | grep -v 'not copied'
-cp -f -p -v ~/.config/micro/*.json ./microcgf 2>&1 | grep -v 'not copied' 
 
 cp -f -p -v ~/.gitconfig ./gitconfig
 

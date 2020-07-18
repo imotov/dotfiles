@@ -6,7 +6,6 @@ cp -f -p ~/.dotfiles/oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
 cp -f -p ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
 mkdir -p ~/.atom
 cp -f -p ~/.dotfiles/atom/* ~/.atom
-cp -f -p ~/.dotfiles/microcfg/* ~/.config/micro
 
 cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
 if [[ $NAME == "grasshopper" ]]; then

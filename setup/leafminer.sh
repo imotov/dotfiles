@@ -21,7 +21,6 @@ sudo apt-get install -y\
   flameshot\
   rclone\
   tree\
-  micro\
 
 
 # java development
