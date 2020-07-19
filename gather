@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+NAME=$(uname -n)
+
 # zsh files
 cp -f -p -v ~/.zshrc ./zshrc
 cp -f -p -v ~/.tmux.conf ./tmux.conf
