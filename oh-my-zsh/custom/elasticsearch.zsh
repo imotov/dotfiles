@@ -3,6 +3,8 @@ alias gffes='git merge --ff-only elastic/$(current_branch)'
 alias gffor='git merge --ff-only origin/$(current_branch)'
 alias gfees='git fetch elastic'
 alias gfeor='git fetch origin'
+alias cd7='cd ~/Projects/elastic/7.x/elasticsearch'
+alias cd8='cd ~/Projects/elastic/8.x/elasticsearch'
 function gfe {
 	git fetch $1
 }
