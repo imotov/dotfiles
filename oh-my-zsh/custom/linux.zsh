@@ -11,6 +11,9 @@ if [[ $OS == "Linux" ]]; then
   # adjust USB-C display
   alias ucdon='xrandr --output DP-1 --scale 2x2'
   alias ucdoff='xrandr --output DP-1 --scale 1x1'
+  # is video on?
+  # returns 1 is a video camera in use and 0 otherwise
+  alias ivo="lsmod | grep '^uvcvideo' | cut -b 31-"
 batsave() {
   sudo sh -c 'echo "min_power" > "/sys/class/scsi_host/host1/link_power_management_policy"'
   sudo sh -c 'echo "min_power" > "/sys/class/scsi_host/host0/link_power_management_policy"'
@@ -21,7 +24,7 @@ clean_branches() {
   eval "$(git for-each-ref --shell --format='branches+=(%(refname))' refs/heads/)"
   for branch in "${branches[@]}"; do
     short_name=${branch#"refs/heads/"}
-    if [[ ! $short_name =~ '^[0-9]+\.([0-9]|x)[0-9]*|master$'  ]]; then 
+    if [[ ! $short_name =~ '^[0-9]+\.([0-9]|x)[0-9]*|master$'  ]]; then
 
       echo ">>>> " $short_name
       git --no-pager log "$branch" -1
