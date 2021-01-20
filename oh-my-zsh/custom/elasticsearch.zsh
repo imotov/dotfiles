@@ -6,6 +6,7 @@ alias gfeor='git fetch origin'
 alias cd7='cd ~/Projects/elastic/7.x/elasticsearch'
 alias cd8='cd ~/Projects/elastic/8.x/elasticsearch'
 alias cds='cd ~/Software'
+alias cdd='cd ~/Downloads'
 function gfe {
 	git fetch $1
 }
