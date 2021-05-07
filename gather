@@ -13,11 +13,23 @@ cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme oh-my-zsh/themes/
 # editor files
 cp -f -p -v ~/.atom/*.cson ~/.atom/*.coffee ~/.atom/*.less ./atom 2>&1 | grep -v 'not copied'
 
-cp -f -p -v ~/.gitconfig ./gitconfig
+# Mac OSX specific part
+OS=$(uname)
+if [ $OS = "Darwin" ]; then
+    cp -f -p -v ~/.gitconfig  ./gitconfig.osx
 
-# need to increase Java heap size on Linux
-if [[ $NAME == "grasshopper" ]]; then
-  cp -f -p -v ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions idea/
+    # other files
+    cp -f -p -rv ~/.MacOSX/* ./MacOSX
+
+    # copy idea.properties and idea.vmoptions files
+    cp -f -p -v ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/idea.vmoptions idea/
+
 else
-  cp -f -p -v ~/.config/JetBrains/IdeaIC2020.1/idea64.vmoptions idea/
+  cp -f -p -v ~/.gitconfig ./gitconfig
+  # need to increase Java heap size on Linux
+  if [[ $NAME == "grasshopper" ]]; then
+    cp -f -p -v ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions idea/
+  else
+    cp -f -p -v ~/.config/JetBrains/IdeaIC2021.1/idea64.vmoptions idea/
+  fi
 fi

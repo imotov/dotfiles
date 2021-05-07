@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 NAME=$(uname -n)
-
 cp -f -p ~/.dotfiles/zshrc ~/.zshrc
 cp -f -p ~/.dotfiles/tmux.conf ~/.tmux.conf
 cp -f -p ~/.dotfiles/oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
@@ -9,11 +8,20 @@ cp -f -p ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
 mkdir -p ~/.atom
 cp -f -p ~/.dotfiles/atom/* ~/.atom
 
-cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
-if [[ $NAME == "grasshopper" ]]; then
-  mkdir -p ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions/
-  cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions/
+# Mac OSX specific part
+OS=$(uname)
+if [ $OS = "Darwin" ]; then
+    mkdir -p ~/.MacOSX/
+    cp -f -p ~/.dotfiles/gitconfig.osx ~/.gitconfig
+    mkdir -p ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
+    cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
 else
-  mkdir -p ~/.config/JetBrains/IdeaIC2020.1/
-  cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IdeaIC2020.1/
+  cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
+  if [[ $NAME == "grasshopper" ]]; then
+    mkdir -p ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions/
+    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions/
+  else
+    mkdir -p ~/.config/JetBrains/IdeaIC2020.1/
+    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IdeaIC2020.1/
+  fi
 fi
