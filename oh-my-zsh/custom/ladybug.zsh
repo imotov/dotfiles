@@ -1,7 +1,8 @@
 NAME=$(uname -n)
 
 if [[ $NAME == "ladybug" ]]; then
-    # Setup go paths
-    GOPATH=~/Projects/GoWork; export GOPATH
-    PATH=$PATH:$GOPATH/bin; export PATH
+  NVM_DIR=~/.nvm; export NVM_DIR
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  GOPATH=~/Projects/GoWork; export GOPATH
+  PATH=$PATH:$GOPATH/bin:$HOME/.cargo/bin; export PATH
 fi

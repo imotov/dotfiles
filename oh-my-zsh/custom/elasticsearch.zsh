@@ -47,3 +47,29 @@ function rampush {
 function prcheck {
 	./gradlew --parallel --max-workers=14 checkPart1 checkPart2 bwcTestSnapshots
 }
+clean_branches() {
+  branches=()
+  eval "$(git for-each-ref --shell --format='branches+=(%(refname))' refs/heads/)"
+  for branch in "${branches[@]}"; do
+    short_name=${branch#"refs/heads/"}
+    if [[ ! $short_name =~ '^[0-9]+\.([0-9]|x)[0-9]*|master$'  ]]; then
+
+      echo ">>>> " $short_name
+      git --no-pager log "$branch" -1
+      read -q "yn?Delete this branch? "
+      echo
+      case $yn in
+      [Nn]* )
+          echo
+          echo keeping
+          echo
+          ;;
+      [Yy]* )
+          echo
+          git branch -D $short_name
+          echo
+          ;;
+      esac
+    fi
+  done
+}
