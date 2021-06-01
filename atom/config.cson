@@ -8,7 +8,7 @@
       "one-light-syntax"
     ]
   editor:
-    fontSize: 11
+    showInvisibles: true
   "exception-reporting":
     userId: "84084d7c-5d2e-4aa9-b56d-bb50c60c428f"
   "linter-js-yaml":
