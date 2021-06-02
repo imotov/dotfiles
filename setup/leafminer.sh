@@ -10,6 +10,7 @@ sudo apt-get -y dist-upgrade
 # general utilities
 sudo apt-get install -y\
   git\
+  cgroup-tools\
   curl\
   zsh\
   apt-transport-https\
@@ -27,7 +28,7 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose
 sudo gpasswd -a $USER docker
 
 # setup dotfiles and enviroments
