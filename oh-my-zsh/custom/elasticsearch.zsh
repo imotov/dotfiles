@@ -76,5 +76,8 @@ clean_branches() {
 function esrun {
 	cur_dir=${PWD}
 	data_dir="$(dirname "${cur_dir}")/data"
-	./gradlew run -Drun.license_type=trial --data-dir="${data_dir}"
+	./gradlew run -Drun.license_type=trial --data-dir="${data_dir}" "$@"
+}
+function esdebug {
+	esrun "--debug-jvm" "$@"
 }
