@@ -73,3 +73,8 @@ clean_branches() {
     fi
   done
 }
+function esrun {
+	cur_dir=${PWD}
+	data_dir="$(dirname "${cur_dir}")/data"
+	./gradlew run -Drun.license_type=trial --data-dir="${data_dir}"
+}
