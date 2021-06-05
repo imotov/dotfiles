@@ -2,7 +2,7 @@
 	name = Igor Motov
 	email = igor@motovs.org
 [core]
-	editor = atom --wait
+	editor = nano
 [credential]
 	helper = osxkeychain
 [color]
