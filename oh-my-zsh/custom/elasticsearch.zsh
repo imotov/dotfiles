@@ -13,7 +13,7 @@ function gfe {
 function gff {
 	git merge --ff-only $1/$(current_branch)
 }
-function gpr {
+function gprf {
     git fetch elastic pull/$1/head:pr/$1
 }
 # fetch PR and squash merge it into master
