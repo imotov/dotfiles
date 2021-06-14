@@ -18,8 +18,8 @@ if [ $OS = "Darwin" ]; then
 else
   cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
   if [[ $NAME == "grasshopper" ]]; then
-    mkdir -p ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions/
-    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions/
+    mkdir -p ~/.config/JetBrains/IntelliJIdea2021.1/
+    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IntelliJIdea2021.1/
   else
     mkdir -p ~/.config/JetBrains/IdeaIC2020.1/
     cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IdeaIC2020.1/
