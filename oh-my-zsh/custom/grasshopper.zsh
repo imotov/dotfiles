@@ -1,4 +1,4 @@
-OS=$(uname)
+NAME=$(uname -n)
 
 if [[ $NAME == "grasshopper" ]]; then
   # adjust USB-C display
@@ -12,5 +12,6 @@ batsave() {
   sudo sh -c 'echo "min_power" > "/sys/class/scsi_host/host0/link_power_management_policy"'
   sudo sh -c 'echo "1500" > "/proc/sys/vm/dirty_writeback_centisecs"'
 }
-
+  alias lon='kasa --plug --alias "Leafminer Plug" on'
+  alias loff='kasa --plug --alias "Leafminer Plug" off'
 fi
