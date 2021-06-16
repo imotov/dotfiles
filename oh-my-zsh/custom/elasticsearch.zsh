@@ -18,7 +18,7 @@ function gprf {
 }
 # fetch PR and squash merge it into master
 function gprm {
-	gpr $1 && git merge --squash pr/$1
+	gprf $1 && git merge --squash pr/$1
 }
 # clean after PR review
 function gprc {
