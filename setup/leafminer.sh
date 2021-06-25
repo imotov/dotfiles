@@ -15,6 +15,7 @@ sudo apt-get install -y\
   zsh\
   apt-transport-https\
   ca-certificates\
+  cifs-utils\
   gnome-tweaks\
   flameshot\
   rclone\
