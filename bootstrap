@@ -4,6 +4,7 @@
 # % sudo apt-get install curl git zsh
 # % curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/bootstrap | zsh
 
+set -e
 rm -rf ~/.oh-my-zsh
 rm -rf ~/.dotfiles
 git clone -q git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -14,4 +15,16 @@ git clone -q https://github.com/imotov/dotfiles.git ~/.dotfiles
 pushd ~/.dotfiles
 # Set proper url for .dotfiles remote repository
 git remote set-url origin git@github.com:imotov/dotfiles.git
+popd
+
+OS=$(uname)
+if [ $OS = "Darwin" ]; then
+  curl -L -o ~/Downloads/WindowHalfsAndThirds.spoon.zip https://github.com/Hammerspoon/Spoons/raw/master/Spoons/WindowHalfsAndThirds.spoon.zip
+  mkdir -p ~/.hammerspoon/Spoons
+  pushd ~/.hammerspoon/Spoons
+  unzip ~/Downloads/WindowHalfsAndThirds.spoon.zip
+  popd
+fi
+
+
 echo "Done."
