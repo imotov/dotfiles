@@ -81,3 +81,6 @@ function esrun {
 function esdebug {
 	esrun "--debug-jvm" "$@"
 }
+
+# Setup pyenv environment
+eval "$(pyenv init --path)"
