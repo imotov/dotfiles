@@ -11,6 +11,9 @@ if [[ $OS == "Darwin" ]]; then
   JAVA16_HOME=$(/usr/libexec/java_home -v 16.0); export JAVA16_HOME
   launchctl setenv JAVA16_HOME "$JAVA16_HOME"
 
-  JAVA_HOME=$JAVA16_HOME; export JAVA_HOME
+  JAVA17_HOME=$(/usr/libexec/java_home -v 17.0); export JAVA16_HOME
+  launchctl setenv JAVA17_HOME "$JAVA17_HOME"
+
+  JAVA_HOME=$JAVA17_HOME; export JAVA_HOME
   launchctl setenv JAVA_HOME "$JAVA_HOME"
 fi
