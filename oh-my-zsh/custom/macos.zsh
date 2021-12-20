@@ -16,7 +16,7 @@ if [[ $OS == "Darwin" ]]; then
 
   JAVA_HOME=$JAVA17_HOME; export JAVA_HOME
   launchctl setenv JAVA_HOME "$JAVA_HOME"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+  [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
