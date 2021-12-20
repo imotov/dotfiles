@@ -7,7 +7,7 @@ cp -f -p -v ~/.zshrc ~/.dotfiles/zshrc
 cp -f -p -v ~/.tmux.conf ~/.dotfiles/tmux.conf
 mkdir -p oh-my-zsh/custom
 mkdir -p oh-my-zsh/themes
-cp -f -p -v ~/.oh-my-zsh/custom/*.zsh ~/.dotfiles/oh-my-zsh/custom/
+cp -f -p -v ~/.oh-my-zsh/custom/??_*.zsh ~/.dotfiles/oh-my-zsh/custom/
 cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme ~/.dotfiles/oh-my-zsh/themes/
 
 # editor files

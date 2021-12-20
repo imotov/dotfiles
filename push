@@ -1,8 +1,10 @@
 #!/usr/bin/env zsh
 
 NAME=$(uname -n)
+setopt +o nomatch &&
 cp -f -p ~/.dotfiles/zshrc ~/.zshrc
 cp -f -p ~/.dotfiles/tmux.conf ~/.tmux.conf
+rm -f ~/.oh-my-zsh/custom/??_*.zsh
 cp -f -p ~/.dotfiles/oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
 cp -f -p ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
 mkdir -p ~/.atom
