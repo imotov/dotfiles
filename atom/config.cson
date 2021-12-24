@@ -20,5 +20,7 @@
       "!epsilon sequence"
     ]
   "linter-ui-default": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
