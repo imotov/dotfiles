@@ -1,4 +1,6 @@
 "*":
+  "atom-beautify":
+    js: {}
   core:
     projectHome: "/Users/igor/Projects"
     restorePreviousWindowsOnStart: "no"
@@ -22,5 +24,10 @@
   "linter-ui-default": {}
   "tree-view":
     hideVcsIgnoredFiles: true
+  "markdown-preview":
+    useGitHubStyle: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
   welcome:
     showOnStartup: false
