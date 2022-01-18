@@ -20,7 +20,12 @@ sudo apt-get install -y\
   flameshot\
   rclone\
   tree\
-  tmux
+  tmux\
+  pbzip2\
+  maven\
+  jq\
+  rtl-sdr\
+  gqrx-sdr
 
 curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/bootstrap | zsh
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -39,4 +44,16 @@ pushd ~/.dotfiles
 git remote set-url origin git@github.com:imotov/dotfiles.git
 popd
 
-chsh -s /usr/bin/zsh
+# Install pyenv
+sudo apt-get -y install make build-essential libssl-dev zlib1g-dev \
+  libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+  libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+sudo chsh -s $(which zsh) $(whoami)
+
+sudo mkdir -p /media/igor/music
+sudo mkdir -p /media/igor/video
+sudo chown igor:staff /media/igor/music
+sudo chown igor:staff /media/igor/video
