@@ -50,5 +50,5 @@ git merge --ff-only DSheirer/master
 cd ../..
 
 cd tarantula
-git clone igor@tarantula.local:/volume1/git/test.git
+git clone igor@tarantula:/volume1/git/test.git
 cd ..
