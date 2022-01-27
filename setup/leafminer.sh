@@ -60,3 +60,4 @@ sudo mkdir -p /media/igor/music
 sudo mkdir -p /media/igor/video
 sudo chown igor:staff /media/igor/music
 sudo chown igor:staff /media/igor/video
+echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda",   ATTRS{idProduct}=="2832", MODE:="0666"'  | sudo tee /etc/udev/rules.d/20-rtl-sdr.rules > /dev/null
