@@ -82,3 +82,13 @@ function esrun {
 function esdebug {
 	esrun "--debug-jvm" "$@"
 }
+function shuffle {
+  for i; do
+    echo $i
+  done \
+  | awk 'BEGIN{srand()}{print rand(), $0}' \
+  | sort -n -k 1 \
+  | awk 'sub(/^[0-9.]+ ([a-zA-Z0-9]+)$/,$2)' \
+  | tr '\n' ' '
+	echo
+}
