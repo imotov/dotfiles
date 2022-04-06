@@ -25,7 +25,8 @@ sudo apt-get install -y\
   maven\
   jq\
   rtl-sdr\
-  gqrx-sdr
+  gqrx-sdr\
+  nfs-common
 
 curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/bootstrap | zsh
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -61,3 +62,5 @@ sudo mkdir -p /media/igor/video
 sudo chown igor:staff /media/igor/music
 sudo chown igor:staff /media/igor/video
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda",   ATTRS{idProduct}=="2832", MODE:="0666"'  | sudo tee /etc/udev/rules.d/20-rtl-sdr.rules > /dev/null
+
+curl https://sh.rustup.rs -sSf | sh -s -- -y

@@ -27,5 +27,12 @@ if [[ $OS == "Darwin" ]]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
   # Setup pyenv environment
-  eval "$(pyenv init --path)"
+  if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init --path)"
+  fi
+
+  # Setup Rust environment
+  if [ -s "$HOME/.cargo/env" ]; then
+    source $HOME/.cargo/env
+  fi
 fi
