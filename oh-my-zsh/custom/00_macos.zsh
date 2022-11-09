@@ -38,4 +38,11 @@ if [[ $OS == "Darwin" ]]; then
   if [ -s "$HOME/.cargo/env" ]; then
     source $HOME/.cargo/env
   fi
+
+  #Setup Ruby environment
+  if [ -s "/opt/homebrew/opt/chruby/share/chruby/chruby.sh" ]; then
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+    chruby ruby-3.1.2
+  fi
 fi
