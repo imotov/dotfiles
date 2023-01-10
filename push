@@ -7,24 +7,29 @@ cp -f -p ~/.dotfiles/tmux.conf ~/.tmux.conf
 rm -f ~/.oh-my-zsh/custom/??_*.zsh
 cp -f -p ~/.dotfiles/oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
 cp -f -p ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
-mkdir -p ~/.atom
-cp -f -p ~/.dotfiles/atom/* ~/.atom
 
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-    cp -f -p ~/.dotfiles/gitconfig.osx ~/.gitconfig
-    mkdir -p ~/.hammerspoon/
-    cp -f -p ~/.dotfiles/hammerspoon/*.lua ~/.hammerspoon
-    if [[ $NAME == "bumblebee" ]]; then
-      mkdir -p ~/Library/Application\ Support/JetBrains/IntelliJIdea2021.1/
-      cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IntelliJIdea2021.1/
-    else
-      mkdir -p ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
-      cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
-    fi
+  mkdir -p ~/Library/Application\ Support/Sublime\ Text/Packages/Users
+  cp -f -p ~/.dotfiles/sublime/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text/Packages/Users
+
+  cp -f -p ~/.dotfiles/gitconfig.osx ~/.gitconfig
+
+  mkdir -p ~/.hammerspoon/
+  cp -f -p ~/.dotfiles/hammerspoon/*.lua ~/.hammerspoon
+
+
+  if [[ $NAME == "bumblebee" ]]; then
+    mkdir -p ~/Library/Application\ Support/JetBrains/IntelliJIdea2021.1/
+    cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IntelliJIdea2021.1/
+  else
+    mkdir -p ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
+    cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
+  fi
 else
   cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
+
   if [[ $NAME == "grasshopper" ]]; then
     mkdir -p ~/.config/JetBrains/IntelliJIdea2021.1/
     cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IntelliJIdea2021.1/

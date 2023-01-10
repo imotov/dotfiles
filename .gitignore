@@ -5,3 +5,4 @@ bin/es
 oh-my-zsh/custom/example.zsh
 idea/idea.key
 log.txt
+dotfiles.sublime-*

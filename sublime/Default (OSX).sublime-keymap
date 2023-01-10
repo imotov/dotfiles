@@ -1,0 +1,4 @@
+[
+	{ "keys": ["ctrl+super+shift+up"], "command": "swap_line_up" },
+	{ "keys": ["ctrl+super+shift+down"], "command": "swap_line_down" }
+]

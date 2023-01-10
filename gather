@@ -10,27 +10,26 @@ mkdir -p oh-my-zsh/themes
 cp -f -p -v ~/.oh-my-zsh/custom/??_*.zsh ~/.dotfiles/oh-my-zsh/custom/
 cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme ~/.dotfiles/oh-my-zsh/themes/
 
-# editor files
-cp -f -p -v ~/.atom/*.cson ~/.atom/*.coffee ~/.atom/*.less ~/.dotfiles/atom 2>&1 | grep -v 'not copied'
 
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-    cp -f -p -v ~/.gitconfig  ~/.dotfiles/gitconfig.osx
+  cp -f -p -v ~/Library/Application\ Support/Sublime\ Text/Packages/User/Default\ \(OSX\).sublime-keymap ~/.dotfiles/sublime 2>&1 | grep -v 'not copied'
 
-    # copy idea.properties and idea.vmoptions files
+  cp -f -p -v ~/.gitconfig  ~/.dotfiles/gitconfig.osx
 
-    if [[ $NAME == "bumblebee" ]]; then
-      cp -f -p -v ~/Library/Application\ Support/JetBrains/IntelliJIdea2021.1/idea.vmoptions ~/.dotfiles/idea/
-    else
-      cp -f -p -v ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/idea.vmoptions ~/.dotfiles/idea/
-    fi
-    mkdir -p ./hammerspoon
-    cp -f -p -v ~/.hammerspoon/*.lua ~/.dotfiles/hammerspoon/
+  mkdir -p ./hammerspoon
+  cp -f -p -v ~/.hammerspoon/*.lua ~/.dotfiles/hammerspoon/
 
+  # copy idea.properties and idea.vmoptions files
+  if [[ $NAME == "bumblebee" ]]; then
+    cp -f -p -v ~/Library/Application\ Support/JetBrains/IntelliJIdea2021.1/idea.vmoptions ~/.dotfiles/idea/
+  else
+    cp -f -p -v ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/idea.vmoptions ~/.dotfiles/idea/
+  fi
 else
   cp -f -p -v ~/.gitconfig ~/.dotfiles/gitconfig
-  # need to increase Java heap size on Linux
+  # copy idea.properties and idea.vmoptions files
   if [[ $NAME == "grasshopper" ]]; then
     cp -f -p -v ~/.config/JetBrains/IntelliJIdea2021.1/idea64.vmoptions ~/.dotfiles/idea/
   else

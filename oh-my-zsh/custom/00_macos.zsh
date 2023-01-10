@@ -3,8 +3,6 @@ OS=$(uname)
 if [[ $OS == "Darwin" ]]; then
   # Setup tunnels
   alias callhome="ssh -C -N -2 -v -D 8080 home -p 22422"
-  alias tues="ssh -C -N -T -v -L 5601:127.0.0.1:5601 home"
-  alias tuci="ssh -C -N -T -v -L 8080:127.0.0.1:8080 home"
 
   # Setup java
   /usr/libexec/java_home &> /dev/null
@@ -47,5 +45,10 @@ if [[ $OS == "Darwin" ]]; then
     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
     source /opt/homebrew/opt/chruby/share/chruby/auto.sh
     chruby ruby-3.1.2
+  fi
+
+  # Setup command line utilities for Sublime
+  if [ -d "/Applications/Sublime Text.app/Contents/SharedSupport/bin/" ]; then
+    export PATH=$PATH:"/Applications/Sublime Text.app/Contents/SharedSupport/bin/"
   fi
 fi
