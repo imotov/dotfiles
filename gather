@@ -14,7 +14,8 @@ cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme ~/.dotfiles/oh-my-zsh/themes/
 # Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-  cp -f -p -v ~/Library/Application\ Support/Sublime\ Text/Packages/User/Default\ \(OSX\).sublime-keymap ~/.dotfiles/sublime 2>&1 | grep -v 'not copied'
+  SUBLIME=~/Library/Application\ Support/Sublime\ Text/Packages/User
+  cp -f -p -v $SUBLIME/Default\ \(OSX\).sublime-keymap $SUBLIME/Preferences.sublime-settings ~/.dotfiles/sublime 2>&1 | grep -v 'not copied'
 
   cp -f -p -v ~/.gitconfig  ~/.dotfiles/gitconfig.osx
 
