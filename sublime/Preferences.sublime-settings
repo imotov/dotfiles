@@ -3,4 +3,8 @@
 {
 	"translate_tabs_to_spaces": true,
 	"draw_white_space": "all",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
 }
