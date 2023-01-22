@@ -15,6 +15,11 @@ if [ $OS = "Darwin" ]; then
   mkdir -p $SUBLIME
   cp -f -p ~/.dotfiles/sublime/Default\ \(OSX\).sublime-keymap ~/.dotfiles/sublime/Preferences.sublime-settings $SUBLIME
 
+  VSCODE=~/Library/Application\ Support/Code/User
+  mkdir -p $VSCODE
+  cp -f -p ~/.dotfiles/vscode/*.json $VSCODE 2>&1 | grep -v 'not copied'
+
+
   cp -f -p ~/.dotfiles/gitconfig.osx ~/.gitconfig
 
   mkdir -p ~/.hammerspoon/
