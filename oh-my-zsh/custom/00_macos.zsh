@@ -7,14 +7,11 @@ if [[ $OS == "Darwin" ]]; then
   # Setup java
   /usr/libexec/java_home &> /dev/null
   if [ $? -eq 0 ]; then
-    JAVA11_HOME=$(/usr/libexec/java_home -v 11.0); export JAVA11_HOME
-    launchctl setenv JAVA11_HOME "$JAVA11_HOME"
-
-    JAVA16_HOME=$(/usr/libexec/java_home -v 16.0); export JAVA16_HOME
-    launchctl setenv JAVA16_HOME "$JAVA16_HOME"
-
-    JAVA17_HOME=$(/usr/libexec/java_home -v 17.0); export JAVA16_HOME
+    JAVA17_HOME=$(/usr/libexec/java_home -v 17.0); export JAVA17_HOME
     launchctl setenv JAVA17_HOME "$JAVA17_HOME"
+
+    JAVA19_HOME=$(/usr/libexec/java_home -v 19.0); export JAVA19_HOME
+    launchctl setenv JAVA17_HOME "$JAVA19_HOME"
 
     JAVA_HOME=$JAVA17_HOME; export JAVA_HOME
     launchctl setenv JAVA_HOME "$JAVA_HOME"
