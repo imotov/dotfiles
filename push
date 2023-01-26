@@ -26,22 +26,11 @@ if [ $OS = "Darwin" ]; then
   cp -f -p ~/.dotfiles/hammerspoon/*.lua ~/.hammerspoon
 
 
-  if [[ $NAME == "bumblebee" ]]; then
-    mkdir -p ~/Library/Application\ Support/JetBrains/IntelliJIdea2021.1/
-    cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IntelliJIdea2021.1/
-  else
-    mkdir -p ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
-    cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
-  fi
+  mkdir -p ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
+  cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
 else
   cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
 
-  if [[ $NAME == "grasshopper" ]]; then
-    mkdir -p ~/.config/JetBrains/IntelliJIdea2021.1/
-    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IntelliJIdea2021.1/
-  else
-    mkdir -p ~/.config/JetBrains/IdeaIC2020.1/
-    cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IdeaIC2020.1/
-  fi
-
+  mkdir -p ~/.config/JetBrains/IdeaIC2020.1/
+  cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IdeaIC2020.1/
 fi
