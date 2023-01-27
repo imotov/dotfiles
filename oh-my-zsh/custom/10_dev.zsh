@@ -1,6 +1,8 @@
 # Github specific settings
 alias gffor='git merge --ff-only origin/$(current_branch)'
 alias gfeor='git fetch origin'
+alias gffqw='git merge --ff-only quickwit-oss/$(current_branch)'
+alias gfeqw='git fetch quickwit-oss'
 alias cds='cd ~/Software'
 alias cdd='cd ~/Downloads'
 function gfe {
