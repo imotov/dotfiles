@@ -16,7 +16,7 @@ OS=$(uname)
 if [ $OS = "Darwin" ]; then
   SUBLIME=~/Library/Application\ Support/Sublime\ Text/Packages/User
   mkdir -p ~/.dotfiles/sublime
-  cp -f -p -v $SUBLIME/Default\ \(OSX\).sublime-keymap $SUBLIME/Preferences.sublime-settings ~/.dotfiles/sublime 2>&1 | grep -v 'not copied'
+  cp -f -p -v $SUBLIME/Default\ \(OSX\).sublime-keymap $SUBLIME/Preferences.sublime-settings $SUBLIME/Pretty\ JSON.sublime-settings ~/.dotfiles/sublime 2>&1 | grep -v 'not copied'
 
   VSCODE=~/Library/Application\ Support/Code/User
   mkdir -p ~/.dotfiles/vscode
