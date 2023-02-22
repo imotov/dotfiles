@@ -1,4 +1,13 @@
 {
     "workbench.colorTheme": "Visual Studio Dark",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "debug.allowBreakpointsEverywhere": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "python.envFile": "${workspaceFolder}/.python-version",
+    "tabnine.experimentalAutoImports": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.scrollback": 10000,
+    "editor.inlayHints.enabled": "offUnlessPressed"
 }
