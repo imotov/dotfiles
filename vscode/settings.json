@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Visual Studio Dark",
     "git.autofetch": true,
     "debug.allowBreakpointsEverywhere": true,
     "[python]": {
@@ -9,5 +8,8 @@
     "tabnine.experimentalAutoImports": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "terminal.integrated.scrollback": 10000,
-    "editor.inlayHints.enabled": "offUnlessPressed"
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "window.autoDetectColorScheme": true,
+    "terminal.integrated.macOptionIsMeta": true,
+    "workbench.colorTheme": "Default Light+"
 }

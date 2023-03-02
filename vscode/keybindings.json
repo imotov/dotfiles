@@ -3,5 +3,9 @@
     {
         "key": "f5",
         "command": "rust-analyzer.run"
+    },
+    {
+        "key": "shift+cmd+/",
+        "command": "workbench.action.tasks.reRunTask"
     }
 ]
