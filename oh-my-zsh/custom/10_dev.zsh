@@ -24,3 +24,18 @@ function shuffle {
   | tr '\n' ' '
 	echo
 }
+
+# Git create ssh remote 
+function gcsr {
+  if [[ "$#" -ne 2 ]]; then
+    print >&2 "Usage: $0 server path"
+    return
+  fi
+  server="$1"
+  git_path="$2"
+  project=$(basename $(pwd))
+  repository="${project}.git"
+  user=$(whoami)
+  ssh $server "set -e; cd $git_path; mkdir $repository; cd $repository; git init --initial-branch=main --bare"
+  git remote add $server ${user}@$server:${git_path}/${repository}
+}
