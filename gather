@@ -4,16 +4,18 @@ NAME=$(uname -n)
 
 # zsh files
 cp -f -p -v ~/.zshrc ~/.dotfiles/zshrc
-cp -f -p -v ~/.tmux.conf ~/.dotfiles/tmux.conf
 mkdir -p oh-my-zsh/custom
 mkdir -p oh-my-zsh/themes
 cp -f -p -v ~/.oh-my-zsh/custom/??_*.zsh ~/.dotfiles/oh-my-zsh/custom/
 cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme ~/.dotfiles/oh-my-zsh/themes/
 
+# Platform independent
+mkdir -p zellij
+cp -f -p -v ~/.config/zellij/*.kdl ~/.dotfiles/zellij/
 
-# Mac OSX specific part
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
+  # Mac OSX specific part
   SUBLIME=~/Library/Application\ Support/Sublime\ Text/Packages/User
   mkdir -p ~/.dotfiles/sublime
   cp -f -p -v $SUBLIME/Default\ \(OSX\).sublime-keymap $SUBLIME/Preferences.sublime-settings $SUBLIME/Pretty\ JSON.sublime-settings ~/.dotfiles/sublime 2>&1 | grep -v 'not copied'
@@ -30,6 +32,7 @@ if [ $OS = "Darwin" ]; then
   # copy idea.properties and idea.vmoptions files
   cp -f -p -v ~/Library/Application\ Support/JetBrains/IdeaIC2022.3/idea.vmoptions ~/.dotfiles/idea/
 else
+  # Linux specific part
   cp -f -p -v ~/.gitconfig ~/.dotfiles/gitconfig
   # copy idea.properties and idea.vmoptions files
   cp -f -p -v ~/.config/JetBrains/IdeaIC2022.3/idea64.vmoptions ~/.dotfiles/idea/

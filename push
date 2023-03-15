@@ -3,14 +3,17 @@
 NAME=$(uname -n)
 setopt +o nomatch &&
 cp -f -p ~/.dotfiles/zshrc ~/.zshrc
-cp -f -p ~/.dotfiles/tmux.conf ~/.tmux.conf
 rm -f ~/.oh-my-zsh/custom/??_*.zsh
 cp -f -p ~/.dotfiles/oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
 cp -f -p ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
 
-# Mac OSX specific part
+# Platform independent
+mkdir -p ~/.config/zellij
+cp -f -p ~/.dotfiles/zellij/*.kdl ~/.config/zellij/
+
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
+  # Mac OSX specific part
   SUBLIME=~/Library/Application\ Support/Sublime\ Text/Packages/User
   mkdir -p $SUBLIME
   cp -f -p ~/.dotfiles/sublime/Default\ \(OSX\).sublime-keymap ~/.dotfiles/sublime/Preferences.sublime-settings $SUBLIME
@@ -29,6 +32,7 @@ if [ $OS = "Darwin" ]; then
   mkdir -p ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
   cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
 else
+  # Linux specific part
   cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
 
   mkdir -p ~/.config/JetBrains/IdeaIC2020.1/

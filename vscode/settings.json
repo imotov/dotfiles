@@ -10,6 +10,5 @@
     "terminal.integrated.scrollback": 10000,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "window.autoDetectColorScheme": true,
-    "terminal.integrated.macOptionIsMeta": true,
-    "workbench.colorTheme": "Default Light+"
+    "terminal.integrated.macOptionIsMeta": true
 }
