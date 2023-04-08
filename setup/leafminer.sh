@@ -28,7 +28,12 @@ sudo apt-get install -y\
   gqrx-sdr\
   nfs-common
 
+
 curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/bootstrap | zsh
+
+
+# Install docker, kubernetes, helm and microk8s
+
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
@@ -42,6 +47,9 @@ sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl
 sudo gpasswd -a $USER docker
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+sudo snap install microk8s --classic
+sudo snap install helm --classic
+sudo usermod -a -G microk8s $(whoami)
 
 pushd ~/.dotfiles
 # Set proper url for .dotfiles remote repository
