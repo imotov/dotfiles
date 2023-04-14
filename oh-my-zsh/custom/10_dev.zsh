@@ -2,8 +2,11 @@
 alias gffor='git merge --ff-only origin/$(current_branch)'
 alias gfeor='git fetch origin'
 alias gffim='git merge --ff-only imotov/$(current_branch)'
+alias gffta='git merge --ff-only tarantula/$(current_branch)'
 alias gfeim='git fetch imotov'
+alias gfeta='git fetch tarantula'
 alias gimpush='git push imotov "$(git_current_branch)"'
+alias gtapush='git push tarantula "$(git_current_branch)"'
 
 function gfe {
 	git fetch $1
