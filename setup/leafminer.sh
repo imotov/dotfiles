@@ -73,3 +73,5 @@ sudo chown igor:staff /media/igor/video
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda",   ATTRS{idProduct}=="2832", MODE:="0666"'  | sudo tee /etc/udev/rules.d/20-rtl-sdr.rules > /dev/null
 
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+sudo apt install -y protobuf-compiler cmake
+
