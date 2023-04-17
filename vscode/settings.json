@@ -12,5 +12,9 @@
   "window.autoDetectColorScheme": true,
   "terminal.integrated.macOptionIsMeta": true,
   "workbench.colorTheme": "Default Light+",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "rust-analyzer.cargo.features": "all"
 }
