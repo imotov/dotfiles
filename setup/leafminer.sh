@@ -9,28 +9,31 @@ sudo apt-get -y dist-upgrade
 
 # general utilities
 sudo apt-get install -y\
-  git\
-  cgroup-tools\
-  curl\
-  zsh\
   apt-transport-https\
+  build-essential\
   ca-certificates\
+  cgroup-tools\
   cifs-utils\
-  gnome-tweaks\
+  curl\
   flameshot\
-  rclone\
-  tree\
-  tmux\
-  pbzip2\
-  maven\
-  jq\
-  rtl-sdr\
+  git\
+  gnome-tweaks\
   gqrx-sdr\
-  nfs-common
+  jq\
+  jekyll\
+  maven\
+  nfs-common\
+  pbzip2\
+  rclone\
+  rtl-sdr\
+  ruby-full\
+  tmux\
+  tree\
+  zsh\
+  zlib1g-dev\
 
 
 curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/bootstrap | zsh
-
 
 # Install docker, kubernetes, helm and microk8s
 
@@ -57,7 +60,7 @@ git remote set-url origin git@github.com:imotov/dotfiles.git
 popd
 
 # Install pyenv
-sudo apt-get -y install make build-essential libssl-dev zlib1g-dev \
+sudo apt-get -y install make libssl-dev\
   libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
@@ -75,3 +78,5 @@ echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda",   ATTRS{idProduct}=="2832", MO
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 sudo apt install -y protobuf-compiler cmake
 
+sudo docker volume create portainer_data
+sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
