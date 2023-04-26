@@ -2,11 +2,11 @@
 alias gffor='git merge --ff-only origin/$(current_branch)'
 alias gfeor='git fetch origin'
 alias gffim='git merge --ff-only imotov/$(current_branch)'
-alias gffta='git merge --ff-only tarantula/$(current_branch)'
+alias gfflm='git merge --ff-only leafminer/$(current_branch)'
 alias gfeim='git fetch imotov'
-alias gfeta='git fetch tarantula'
+alias gfelm='git fetch leafminer'
 alias gimpush='git push imotov "$(git_current_branch)"'
-alias gtapush='git push tarantula "$(git_current_branch)"'
+alias glmpush='git push leafminer "$(git_current_branch)"'
 
 function gfe {
 	git fetch $1
@@ -63,8 +63,10 @@ function shuffle {
 # Working directories
 alias cds='cd ~/Software'
 alias cdd='cd ~/Downloads'
+alias cddf='cd ~/.dotfiles'
 alias cdsb='cd ~/Sandbox'
 alias cdp='cd ~/Projects'
 alias cdpi='cd ~/Projects/imotov'
 alias cdpq='cd ~/Projects/quickwit-oss'
+alias cdpqq='cd ~/Projects/quickwit-oss/quickwit'
 alias bw='aws --endpoint-url http://black-widow.home.motovs.org:9000 s3'
