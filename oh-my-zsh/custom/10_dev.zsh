@@ -67,6 +67,11 @@ alias cddf='cd ~/.dotfiles'
 alias cdsb='cd ~/Sandbox'
 alias cdp='cd ~/Projects'
 alias cdpi='cd ~/Projects/imotov'
+alias bw='aws --endpoint-url http://black-widow.home.motovs.org:9000 s3'
+
+# Quickwit specific
 alias cdpq='cd ~/Projects/quickwit-oss'
 alias cdpqq='cd ~/Projects/quickwit-oss/quickwit'
-alias bw='aws --endpoint-url http://black-widow.home.motovs.org:9000 s3'
+alias qwdu='pushd ~/Projects/quickwit-oss/quickwit; make docker-compose-up; popd'
+alias qwdd='pushd ~/Projects/quickwit-oss/quickwit; make docker-compose-down; popd'
+alias qwrmp='pushd ~/Projects/quickwit-oss/quickwit; make -k docker-compose-down rm-postgres docker-compose-up; popd'
