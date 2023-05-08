@@ -5,8 +5,10 @@ local git_branch='$(git_prompt_info)'
 
 if [[ $(uname -n) == "leafminer" ]]; then
   user='%{$fg_bold[green]%}%n@%m%{$reset_color%}'
-elif [[ ${$(uname -n)%%.*} == "bee"  ]]; then
+elif [[ ${$(uname -n)%%.*} == "bee" ]]; then
   user='%{$fg_bold[blue]%}%n@%m%{$reset_color%}'
+elif [[ $(uname -n) == "little-bee" ]]; then
+  user='%{$fg_bold[magenta]%}%n@%m%{$reset_color%}'
 else
   user='%{$fg_bold[red]%}%n@%m%{$reset_color%}'
 fi
