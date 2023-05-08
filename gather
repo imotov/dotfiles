@@ -10,24 +10,12 @@ cp -f -p -v ~/.oh-my-zsh/custom/??_*.zsh ~/.dotfiles/oh-my-zsh/custom/
 cp -f -p -v ~/.oh-my-zsh/themes/imotov.zsh-theme ~/.dotfiles/oh-my-zsh/themes/
 
 # Platform independent
-mkdir -p zellij
-cp -f -p -v ~/.config/zellij/*.kdl ~/.dotfiles/zellij/
+cp -f -p -v ~/.tmux.conf ~/.dotfiles/tmux.conf
 
+# Platform dependent
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-  # Mac OSX specific part
-  SUBLIME=~/Library/Application\ Support/Sublime\ Text/Packages/User
-  mkdir -p ~/.dotfiles/sublime
-  cp -f -p -v $SUBLIME/Default\ \(OSX\).sublime-keymap $SUBLIME/Preferences.sublime-settings $SUBLIME/Pretty\ JSON.sublime-settings ~/.dotfiles/sublime 2>&1 | grep -v 'not copied'
-
-  VSCODE=~/Library/Application\ Support/Code/User
-  mkdir -p ~/.dotfiles/vscode
-  cp -f -p -v $VSCODE/*.json ~/.dotfiles/vscode 2>&1 | grep -v 'not copied'
-
   cp -f -p -v ~/.gitconfig  ~/.dotfiles/gitconfig.osx
-
-  mkdir -p ./hammerspoon
-  cp -f -p -v ~/.hammerspoon/*.lua ~/.dotfiles/hammerspoon/
 
   # copy idea.properties and idea.vmoptions files
   cp -f -p -v ~/Library/Application\ Support/JetBrains/IdeaIC2022.3/idea.vmoptions ~/.dotfiles/idea/

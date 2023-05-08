@@ -17,18 +17,4 @@ pushd ~/.dotfiles
 git remote set-url origin git@github.com:imotov/dotfiles.git
 popd
 
-OS=$(uname)
-if [ $OS = "Darwin" ]; then
-  curl -L -o ~/Downloads/WindowHalfsAndThirds.spoon.zip https://github.com/Hammerspoon/Spoons/raw/master/Spoons/WindowHalfsAndThirds.spoon.zip
-  mkdir -p ~/.hammerspoon/Spoons
-  pushd ~/.hammerspoon/Spoons
-  unzip ~/Downloads/WindowHalfsAndThirds.spoon.zip
-  popd
-
-  git clone https://github.com/nvm-sh/nvm.git ~/.nvm
-  pushd ~/.nvm
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-  popd
-fi
-
 echo "Done."

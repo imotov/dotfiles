@@ -8,26 +8,12 @@ cp -f -p ~/.dotfiles/oh-my-zsh/custom/*.zsh ~/.oh-my-zsh/custom/
 cp -f -p ~/.dotfiles/oh-my-zsh/themes/imotov.zsh-theme ~/.oh-my-zsh/themes/
 
 # Platform independent
-mkdir -p ~/.config/zellij
-cp -f -p ~/.dotfiles/zellij/*.kdl ~/.config/zellij/
+cp -f -p ~/.dotfiles/tmux.conf ~/.tmux.conf
 
+# Platform dependent
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
-  # Mac OSX specific part
-  SUBLIME=~/Library/Application\ Support/Sublime\ Text/Packages/User
-  mkdir -p $SUBLIME
-  cp -f -p ~/.dotfiles/sublime/Default\ \(OSX\).sublime-keymap ~/.dotfiles/sublime/Preferences.sublime-settings $SUBLIME
-
-  VSCODE=~/Library/Application\ Support/Code/User
-  mkdir -p $VSCODE
-  cp -f -p ~/.dotfiles/vscode/*.json $VSCODE 2>&1 | grep -v 'not copied'
-
-
   cp -f -p ~/.dotfiles/gitconfig.osx ~/.gitconfig
-
-  mkdir -p ~/.hammerspoon/
-  cp -f -p ~/.dotfiles/hammerspoon/*.lua ~/.hammerspoon
-
 
   mkdir -p ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
   cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
