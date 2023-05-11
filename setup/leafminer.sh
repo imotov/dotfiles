@@ -69,10 +69,6 @@ git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-v
 
 sudo chsh -s $(which zsh) $(whoami)
 
-sudo mkdir -p /media/igor/music
-sudo mkdir -p /media/igor/video
-sudo chown igor:staff /media/igor/music
-sudo chown igor:staff /media/igor/video
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda",   ATTRS{idProduct}=="2832", MODE:="0666"'  | sudo tee /etc/udev/rules.d/20-rtl-sdr.rules > /dev/null
 
 curl https://sh.rustup.rs -sSf | sh -s -- -y
