@@ -9,9 +9,6 @@ set -e
 sudo apt-get update
 sudo NEEDRESTART_MODE=a apt-get -y dist-upgrade
 
-# Fix MTU settings
-sudo sed -i '/      dhcp4: true/a\      mtu: 1400' /etc/netplan/00-installer-config.yaml
-
 # general utilities
 sudo NEEDRESTART_MODE=a apt-get install -y\
   apt-transport-https\
