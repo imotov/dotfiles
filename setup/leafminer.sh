@@ -46,10 +46,8 @@ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://pack
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 sudo apt-get update
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl  docker-compose-plugin
 sudo gpasswd -a $USER docker
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
 sudo snap install microk8s --classic
 sudo snap install helm --classic
 sudo usermod -a -G microk8s $(whoami)
@@ -76,3 +74,6 @@ sudo apt install -y protobuf-compiler cmake
 
 sudo docker volume create portainer_data
 sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash

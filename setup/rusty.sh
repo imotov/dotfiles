@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Bootstraping my rust development server
+# Bootstraping my rust development server (rusty and little-bee)
 #
 # Usage: curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/setup/rusty.sh | bash
 #
@@ -18,6 +18,9 @@ sudo NEEDRESTART_MODE=a apt-get install -y\
   cmake\
   curl\
   git\
+  jq\
+  libssl-dev\
+  pkg-config\
   protobuf-compiler\
   qemu-guest-agent\
   spice-vdagent\
