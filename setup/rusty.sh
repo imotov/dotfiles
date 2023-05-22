@@ -23,8 +23,6 @@ sudo NEEDRESTART_MODE=a apt-get install -y\
   pkg-config\
   protobuf-compiler\
   qemu-guest-agent\
-  spice-vdagent\
-  spice-webdavd\
   tmux\
   tree\
   zlib1g-dev\
@@ -51,3 +49,6 @@ sudo chsh -s $(which zsh) $(whoami)
 
 # Install rustup
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
