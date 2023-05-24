@@ -32,21 +32,6 @@ function gprc {
 
 alias gnow='git commit --amend --date "`date`"'
 
-# Git create ssh remote 
-function gcsr {
-  if [[ "$#" -ne 2 ]]; then
-    print >&2 "Usage: $0 server path"
-    return
-  fi
-  server="$1"
-  git_path="$2"
-  project=$(basename $(pwd))
-  repository="${project}.git"
-  user=$(whoami)
-  ssh $server "set -e; cd $git_path; mkdir $repository; cd $repository; git init --initial-branch=main --bare"
-  git remote add $server ${user}@$server:${git_path}/${repository}
-}
-
 # ========= Misc commands ========= 
 
 function shuffle {
@@ -75,3 +60,4 @@ alias cdpqq='cd ~/Projects/quickwit-oss/quickwit'
 alias qwdu='pushd ~/Projects/quickwit-oss/quickwit; make docker-compose-up; popd'
 alias qwdd='pushd ~/Projects/quickwit-oss/quickwit; make docker-compose-down; popd'
 alias qwrmp='pushd ~/Projects/quickwit-oss/quickwit; make -k docker-compose-down rm-postgres docker-compose-up; popd'
+export QW_DISABLE_TELEMETRY=1
