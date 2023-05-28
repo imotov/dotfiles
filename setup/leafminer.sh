@@ -51,7 +51,7 @@ echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/packages.microso
 
 # Install docker, kubernetes, helm, microk8s and vscode
 sudo apt-get update
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl docker-compose-plugin code-insiders
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl docker-compose-plugin code
 sudo gpasswd -a $USER docker
 sudo snap install microk8s --classic
 sudo snap install helm --classic
