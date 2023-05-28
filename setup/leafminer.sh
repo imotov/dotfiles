@@ -35,18 +35,23 @@ sudo apt-get install -y\
 
 curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/bootstrap | zsh
 
-# Install docker, kubernetes, helm and microk8s
-
+# Add docker repository
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
+# Add kubernetes repository
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
+# Add vscode repository
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/packages.microsoft.gpg
+echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+
+# Install docker, kubernetes, helm, microk8s and vscode
 sudo apt-get update
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl  docker-compose-plugin
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl docker-compose-plugin code-insiders
 sudo gpasswd -a $USER docker
 sudo snap install microk8s --classic
 sudo snap install helm --classic

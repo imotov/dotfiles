@@ -61,3 +61,8 @@ alias qwdu='pushd ~/Projects/quickwit-oss/quickwit; make docker-compose-up; popd
 alias qwdd='pushd ~/Projects/quickwit-oss/quickwit; make docker-compose-down; popd'
 alias qwrmp='pushd ~/Projects/quickwit-oss/quickwit; make -k docker-compose-down rm-postgres docker-compose-up; popd'
 export QW_DISABLE_TELEMETRY=1
+
+if [ -s "/usr/bin/code" ]; then
+  alias vsct='code tunnel --disable-telemetry --accept-server-license-terms'
+fi
+  
