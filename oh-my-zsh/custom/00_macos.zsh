@@ -12,4 +12,9 @@ if [[ $OS == "Darwin" ]]; then
     export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   fi
 
+  # Setup command line utilities for Sublime
+  if [ -d "/Applications/Sublime Text.app/Contents/SharedSupport/bin" ]; then
+    export PATH=$PATH:"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+  fi
+
 fi
