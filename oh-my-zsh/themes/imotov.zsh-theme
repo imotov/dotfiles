@@ -7,7 +7,7 @@ if [[ $(uname -n) == "leafminer" ]]; then
   user='%{$fg_bold[green]%}%n@%m%{$reset_color%}'
 elif [[ ${$(uname -n)%%.*} == "bee" ]]; then
   user='%{$fg_bold[blue]%}%n@%m%{$reset_color%}'
-elif [[ $(uname -n) == "little-bee" ]]; then
+elif [[ ${$(uname -n)%%.*} == "wasp" ]]; then
   user='%{$fg_bold[magenta]%}%n@%m%{$reset_color%}'
 else
   user='%{$fg_bold[red]%}%n@%m%{$reset_color%}'
@@ -26,7 +26,7 @@ if [ $TERM = "dumb" ]
     else PROMPT="${connection}${user}:${pwd}${git_branch}❯ "
 fi
 
-ZSH_THEME_GIT_PROMPT_PREFIX="❮%{$fg[blue]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="❮%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}⭒%{$reset_color%}"
 
