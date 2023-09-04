@@ -1,6 +1,8 @@
 OS=$(uname)
 
 if [[ $OS == "Darwin" ]]; then
+  PATH=$PATH:$HOME/.local/bin
+
   # Setup tunnels
   alias callhome="ssh -C -N -2 -v -D 8080 home -p 22422"
 
