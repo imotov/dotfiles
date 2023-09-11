@@ -7,7 +7,7 @@ if [[ $(uname -n) == "leafminer" ]]; then
   user='%{$fg_bold[green]%}%n@%m%{$reset_color%}'
 elif [[ ${$(uname -n)%%.*} == "bee" ]]; then
   user='%{$fg_bold[blue]%}%n@%m%{$reset_color%}'
-elif [[ ${$(uname -n)%%.*} == "wasp" ]]; then
+elif [[ ${$(uname -n)%%.*} == "mantis" ]]; then
   user='%{$fg_bold[magenta]%}%n@%m%{$reset_color%}'
 else
   user='%{$fg_bold[red]%}%n@%m%{$reset_color%}'
