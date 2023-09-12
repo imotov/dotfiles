@@ -16,12 +16,7 @@ cp -f -p -v ~/.tmux.conf ~/.dotfiles/tmux.conf
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
   cp -f -p -v ~/.gitconfig  ~/.dotfiles/gitconfig.osx
-
-  # copy idea.properties and idea.vmoptions files
-  cp -f -p -v ~/Library/Application\ Support/JetBrains/IdeaIC2022.3/idea.vmoptions ~/.dotfiles/idea/
 else
   # Linux specific part
   cp -f -p -v ~/.gitconfig ~/.dotfiles/gitconfig
-  # copy idea.properties and idea.vmoptions files
-  cp -f -p -v ~/.config/JetBrains/IdeaIC2022.3/idea64.vmoptions ~/.dotfiles/idea/
 fi

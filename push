@@ -14,13 +14,7 @@ cp -f -p ~/.dotfiles/tmux.conf ~/.tmux.conf
 OS=$(uname)
 if [ $OS = "Darwin" ]; then
   cp -f -p ~/.dotfiles/gitconfig.osx ~/.gitconfig
-
-  mkdir -p ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
-  cp -f -p ~/.dotfiles/idea/idea.vmoptions ~/Library/Application\ Support/JetBrains/IdeaIC2021.1/
 else
   # Linux specific part
   cp -f -p ~/.dotfiles/gitconfig ~/.gitconfig
-
-  mkdir -p ~/.config/JetBrains/IdeaIC2020.1/
-  cp -f -p ~/.dotfiles/idea/idea64.vmoptions ~/.config/JetBrains/IdeaIC2020.1/
 fi
