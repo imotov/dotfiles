@@ -30,7 +30,15 @@ function gprc {
   git branch -D pr/$1 && git reset --hard HEAD
 }
 
-alias gnow='git commit --amend --date "`date`"'
+function gnow {
+  GIT_COMMITTER_DATE=`date '+%Y-%m-%d %H:%M:%S %z'`
+  git commit --amend  --no-edit --date "$GIT_COMMITTER_DATE"
+}
+
+function gda {
+  git_date=$([[ $OS == "Darwin" ]] && date -v-$1d '+%Y-%m-%d %H:%M:%S %z' || date --date="$1 day ago" '+%Y-%m-%d %H:%M:%S %z')
+  GIT_COMMITTER_DATE="$git_date" git commit --amend  --no-edit --date "$git_date"
+}
 
 # ========= Misc commands ========= 
 
@@ -53,16 +61,3 @@ alias cdsb='cd ~/Sandbox'
 alias cdp='cd ~/Projects'
 alias cdpi='cd ~/Projects/imotov'
 alias bw='aws --endpoint-url http://black-widow.home.motovs.org:9000 s3'
-
-# Quickwit specific
-alias cdpq='cd ~/Projects/quickwit-oss'
-alias cdpqq='cd ~/Projects/quickwit-oss/quickwit'
-alias qwdu='pushd ~/Projects/quickwit-oss/quickwit; make docker-compose-up; popd'
-alias qwdd='pushd ~/Projects/quickwit-oss/quickwit; make docker-compose-down; popd'
-alias qwrmp='pushd ~/Projects/quickwit-oss/quickwit; make -k docker-compose-down rm-postgres docker-compose-up; popd'
-export QW_DISABLE_TELEMETRY=1
-
-if [ -s "/usr/bin/code" ]; then
-  alias vsct='code tunnel --disable-telemetry --accept-server-license-terms'
-fi
-  
