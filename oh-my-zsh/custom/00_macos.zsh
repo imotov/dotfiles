@@ -34,4 +34,8 @@ if [[ $OS == "Darwin" ]]; then
     export PATH=$PATH:"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
   fi
 
+  if [ -s "/opt/homebrew/opt/chruby/share/chruby/chruby.sh" ]; then
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+  fi
 fi
