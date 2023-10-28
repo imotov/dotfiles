@@ -38,4 +38,13 @@ if [[ $OS == "Darwin" ]]; then
     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
     source /opt/homebrew/opt/chruby/share/chruby/auto.sh
   fi
+
+  if [ -s "/usr/libexec/java_home" ]; then
+    export ES_JAVA_HOME=`/usr/libexec/java_home -v17`
+  fi
+
+  if [ -d "$HOME/Software/apache-opennlp-1.9.4" ]; then
+    export PATH=$PATH:"$HOME/Software/apache-opennlp-1.9.4/bin"
+  fi
+  
 fi
