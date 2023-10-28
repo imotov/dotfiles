@@ -20,7 +20,13 @@ if [[ $OS == "Darwin" ]]; then
     if command -v pyenv 1>/dev/null 2>&1; then
       eval "$(pyenv init -)"
       eval "$(pyenv virtualenv-init -)"
+      # Ensure that pip can only install to virtualenv's make gpip a workaround
       export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+      export PIP_REQUIRE_VIRTUALENV=true
+      gpip() {
+          PIP_REQUIRE_VIRTUALENV="" pip "$@"
+      }
+      export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
     fi
   fi
 
