@@ -30,6 +30,12 @@ if [[ $OS == "Darwin" ]]; then
     fi
   fi
 
+  # Setup poetry
+  if command -v poetry 1>/dev/null 2>&1; then
+    mkdir -p $ZSH_CUSTOM/plugins/poetry
+    poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+  fi
+
   # Setup command line utilities for VS Code
   if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
     export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
