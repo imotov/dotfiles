@@ -22,6 +22,7 @@ export CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git lein osx zsh-syntax-highlighting)
-plugins=(git docker-compose gradle golang kubectl rust macos zsh-syntax-highlighting poetry)
+
+plugins=(git docker-compose gradle golang kubectl rust macos zsh-syntax-highlighting virtualenv poetry)
 
 source $ZSH/oh-my-zsh.sh
