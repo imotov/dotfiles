@@ -49,9 +49,15 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/packages.microsoft.gpg
 echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 
+# Add nvidia container toolkit repository
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
 # Install docker, kubernetes, helm, microk8s and vscode
 sudo apt-get update
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl docker-compose-plugin code
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io kubectl docker-compose-plugin code nvidia-container-toolkit
 sudo gpasswd -a $USER docker
 sudo snap install microk8s --classic
 sudo snap install helm --classic
