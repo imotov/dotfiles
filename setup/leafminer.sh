@@ -88,3 +88,9 @@ sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -
 
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# Install minikube
+pushd ~/Downloads
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+sudo dpkg -i minikube_latest_amd64.deb
+popd
