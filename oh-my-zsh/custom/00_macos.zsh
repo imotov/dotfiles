@@ -51,7 +51,7 @@ if [[ $OS == "Darwin" ]]; then
     source /opt/homebrew/opt/chruby/share/chruby/auto.sh
   fi
 
-  if [ -s "/usr/libexec/java_home" ]; then
+  if /usr/libexec/java_home 1>/dev/null 2>&1; then
     export ES_JAVA_HOME=`/usr/libexec/java_home -v17`
   fi
 
