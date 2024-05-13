@@ -40,6 +40,57 @@ function gda {
   GIT_COMMITTER_DATE="$git_date" git commit --amend  --no-edit --date "$git_date"
 }
 
+# ======= Poetry shortcuts ========
+
+function po {
+  poetry "$@"
+}
+
+function poi {
+  po install "$@"
+}
+
+function poid {
+  po install --only=dev "$@"
+}
+
+function poind {
+  po install --without=dev "$@"
+}
+
+function pon {
+  po new "$1" && \
+  cd "$1" && \
+  poi && \
+  curl -sSfOL https://raw.githubusercontent.com/python-poetry/poetry/main/.gitignore && \
+  git init
+}
+
+function ponc {
+  pon "$1" && code .
+}
+
+function poa {
+  po add "$@"
+}
+
+function poad {
+  poa --group dev "$@"
+}
+
+
+function pos {
+  po show "$@"
+}
+
+function posd {
+  pos --only=dev "$@"
+}
+
+function posnd {
+  pos --without=dev "$@"
+}
+
 # ========= Misc commands ========= 
 
 function shuffle {

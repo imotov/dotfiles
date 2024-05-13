@@ -23,6 +23,6 @@ export CASE_SENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git lein osx zsh-syntax-highlighting)
 
-plugins=(git docker-compose gradle golang kubectl rust macos zsh-syntax-highlighting virtualenv poetry)
+plugins=(git docker-compose gradle golang kubectl rust macos zsh-syntax-highlighting virtualenv poetry poetry-env)
 
 source $ZSH/oh-my-zsh.sh
