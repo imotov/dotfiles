@@ -66,6 +66,17 @@ function pon {
   git init
 }
 
+function pont {
+  pon "$1" && \
+  poad pytest && \
+  mkdir .vscode && \
+  if [[ -n $(command -v jq) ]]; then echo '{"python.testing.pytestArgs": ["-vv","-s"],"python.testing.pytestEnabled": true}' | jq >  .vscode/settings.json; fi
+}
+
+function pontc {
+  pont "$1" && code .
+}
+
 function ponc {
   pon "$1" && code .
 }
@@ -77,7 +88,6 @@ function poa {
 function poad {
   poa --group dev "$@"
 }
-
 
 function pos {
   po show "$@"
@@ -111,4 +121,5 @@ alias cddf='cd ~/.dotfiles'
 alias cdsb='cd ~/Sandbox'
 alias cdp='cd ~/Projects'
 alias cdpi='cd ~/Projects/imotov'
+alias cdpa='cd ~/Projects/akaula'
 alias bw='aws --endpoint-url http://black-widow.home.motovs.org:9000 s3'
