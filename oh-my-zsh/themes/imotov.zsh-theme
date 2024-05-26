@@ -10,6 +10,8 @@ elif [[ ${$(uname -n)%%.*} == "bee" ]]; then
   user='%{$fg_bold[blue]%}%n@%m%{$reset_color%}'
 elif [[ ${$(uname -n)%%.*} == "mantis" ]]; then
   user='%{$fg_bold[magenta]%}%n@%m%{$reset_color%}'
+elif [[ ${$(uname -n)%%.*} == "watchtower" ]]; then
+  user='%{$fg_bold[cyan]%}%n@%m%{$reset_color%}'
 else
   user='%{$fg_bold[red]%}%n@%m%{$reset_color%}'
 fi
