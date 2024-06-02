@@ -20,8 +20,10 @@ sudo apt-get install -y\
   git\
   gnome-tweaks\
   gqrx-sdr\
+  iw\
   rtl-sdr\
   tree\
+  wireless-tools\
   zsh\
   
 
