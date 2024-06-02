@@ -5,6 +5,7 @@
 #
 
 set -e
+sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf
 sudo apt-get update
 sudo apt-get -y dist-upgrade
 
@@ -14,18 +15,14 @@ sudo apt-get install -y\
   build-essential\
   ca-certificates\
   cgroup-tools\
-  cifs-utils\
   curl\
-  flameshot\
   git\
-  gnome-tweaks\
   gqrx-sdr\
   iw\
   rtl-sdr\
   tree\
   wireless-tools\
   zsh\
-  
 
 curl -sk https://raw.githubusercontent.com/imotov/dotfiles/master/bootstrap | zsh
 
