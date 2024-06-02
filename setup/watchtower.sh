@@ -1,7 +1,7 @@
-
 #!/bin/bash
 #
 # Bootstraping the watchtower server
+# Usage: curl -sL https://raw.githubusercontent.com/imotov/dotfiles/master/setup/watchtower.sh | bash
 #
 
 set -e
@@ -50,3 +50,23 @@ popd
 sudo chsh -s $(which zsh) $(whoami)
 
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda",   ATTRS{idProduct}=="2832", MODE:="0666"'  | sudo tee /etc/udev/rules.d/20-rtl-sdr.rules > /dev/null
+
+# Disable wifi power save
+sudo tee "/etc/systemd/system/disable-wifi-power-save.service" > /dev/null <<EOF
+[Unit]
+Description=Disable WiFi power save
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/iw dev wlp1s0 set power_save off
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable disable-wifi-power-save.service
+sudo systemctl start disable-wifi-power-save.service
+
+echo "Don't foget to reboot"
